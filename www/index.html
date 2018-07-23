@@ -46,6 +46,7 @@
     <!-- Cordova reference -->
     <script src="./cordova.js"></script> 
     <script src="./scripts/index.js"></script>
+    <script src="./js/config.js"></script>
     <script src="./js/login.js"></script>
     <script src='./js/onesignal.js'></script>
    
@@ -57,20 +58,20 @@
 
     <div class='login'>
       <br>
-      <p>
+      <p style='margin-bottom: 40px;'>
         <img src='./doctum.png' width="40%">
       </p>
-      <p>
+      <p style='margin-bottom: 40px;'>
         <ons-input id="username"   modifier="underbar" placeholder="Usuário" float></ons-input>
       </p>
-      <p> 
+      <p style='margin-bottom: 40px;'>
           <ons-input id="password"  modifier="underbar" type="password" placeholder="Senha" float></ons-input>
       </p>
       <p id='button'>
           <ons-button id='login'>Entrar</ons-button>
       </p>
-      <p style='text-align: right;vertical-align: middle;'>
-          Lembrar dados <ons-switch id="lembreme" input-id="input-lembreme"></ons-switch>
+      <p style='text-align: center;vertical-align: middle;'>
+         <ons-switch id="lembreme" input-id="input-lembreme"></ons-switch> Lembrar dados
       </p>
       <p id='progress' style="display:none">
           <ons-progress-bar indeterminate></ons-progress-bar>

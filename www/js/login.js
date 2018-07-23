@@ -31,7 +31,7 @@ $(document).ready(function(){
             }
 
             $.post(
-              'http://localhost/financeiro/sicof/usuarios/logintoken.php',
+              server_auth,
               {
                 'username'  : username,
                 'password'  : password,

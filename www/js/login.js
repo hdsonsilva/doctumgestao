@@ -45,7 +45,7 @@ $(document).ready(function(){
                   ons.notification.alert('Login efetuado com sucesso.');
                   localStorage.setItem('token',ret.token);
 
-                  //window.location.href = './app.html';
+                  window.location.href = './app.html';
                 }
                 else{
                   ons.notification.alert(ret.erro);

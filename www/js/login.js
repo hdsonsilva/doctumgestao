@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+      
+
       //Verificando se existem dados de usuario e senha salvos
       if(localStorage.getItem('login_lembreme') == 1){
 
@@ -42,7 +44,7 @@ $(document).ready(function(){
                   ons.notification.alert('Login efetuado com sucesso.');
                   localStorage.setItem('token',ret.token);
 
-                  window.location.href = './app.html';
+                  //window.location.href = './app.html';
                 }
                 else{
                   ons.notification.alert(ret.erro);

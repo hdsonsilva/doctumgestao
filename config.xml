@@ -4,11 +4,13 @@
     <description>
         Gerenciamento de alguns processos que precisam de aprovação
     </description>
+
     <author email="contato@doctum.edu.br" href="http://www.doctum.edu.br">
         Contato Doctum
     </author>
-    <content src="index.html" />
     
+    <content src="index.html" />
+
     <gap:plugin name="onesignal-cordova-plugin" spec="^2.4.1" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <!-- Requires cli-8.0.0 but we recommend using the latest version. -->

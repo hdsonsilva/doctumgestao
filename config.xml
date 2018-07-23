@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.doctum.analytics" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Doctum Analytics</name>
+    <description>
+        Analises gerenciais doctum
+    </description>
+    <author email="contato@doctum.edu.br" href="http://www.doctum.edu.br">
+        Flux Softwares
+    </author>
+    <content src="index.html" />
+     <gap:plugin name="onesignal-cordova-plugin" spec="^2.4.1" source="npm" /> 
+    <plugin name="cordova-plugin-whitelist" source="npm" />
+    <!-- Requires cli-8.0.0 but we recommend using the latest version. -->
+    <!-- <preference name="phonegap-version" value="cli-8.0.0" /> -->
+    <preference name="android-build-tool" value="gradle" />
+    <preference name="android-minSdkVersion" value="15" />
+    <!-- Can omit if not targetting Windows Phone -->
+    <preference name="windows-appx-target" value="8.1-phone" />
+    <preference name="WindowsToastCapable" value="true" />
+
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="geo:*" />
+    
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+
+     <!-- Define app icon for each platform. -->
+    <icon src="doctum.png" />
+    
+</widget>

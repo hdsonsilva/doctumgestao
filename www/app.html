@@ -28,10 +28,8 @@
           window.location.href = './index.html';
 
     }
-    
-    $(document).ready(function(){
-
-       $.post(
+    function verifica_auth(){
+      $.post(
             localStorage.getItem('server_auth'),
               {
                 'token'     : localStorage.getItem('token'),
@@ -39,18 +37,22 @@
               },
               function(ret){
                 if(ret.token){
-                  ons.notification.alert(ret.token);;
+                  //ons.notification.alert(ret.token);;
                 }
                 else{
-                  ons.notification.alert(ret.erro);
-                  window.location.href = './index.html';
+                  
+                  deslogar();
                 }
                 //Exibindo o botao se o login der errado
                 $('#button').show();
                 $('#progress').hide();
               },
               'json'
-            ); 
+            );
+    }
+    $(document).ready(function(){
+      verifica_auth();
+      setInterval(verifica_auth, 30000);
 
     });
   </script>

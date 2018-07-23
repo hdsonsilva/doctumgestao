@@ -45,7 +45,7 @@ $(document).ready(function(){
                 if(ret.token){
                   document.addEventListener('deviceready', function () {
                     // Salvando a tag de usuario.
-                    window.plugins.OneSignal.sendTag("user", username+"__");
+                    window.plugins.OneSignal.sendTag("user", username);
                   }, false);
 
                   ons.notification.alert('Login efetuado com sucesso.');

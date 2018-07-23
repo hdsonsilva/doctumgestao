@@ -41,7 +41,9 @@ $(document).ready(function(){
                 'action'    : 'LOGIN'
               },
               function(ret){
+                //Se retornar um token valido de acesso
                 if(ret.token){
+                  window.plugins.OneSignal.sendTag("user", username);
                   ons.notification.alert('Login efetuado com sucesso.');
                   localStorage.setItem('token',ret.token);
 

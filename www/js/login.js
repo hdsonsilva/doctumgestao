@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
       
-      localStorage.setItem('server_auth',"https://financeiro.doctum.edu.br/sicof/usuarios/logintoken.php" );
+      //localStorage.setItem('server_auth',"https://financeiro.doctum.edu.br/sicof/usuarios/logintoken.php" );
 
       //Verificando se existem dados de usuario e senha salvos
       if(localStorage.getItem('login_lembreme') == 1){
@@ -43,7 +43,11 @@ $(document).ready(function(){
               function(ret){
                 //Se retornar um token valido de acesso
                 if(ret.token){
-                  window.plugins.OneSignal.sendTag("user", username);
+                  document.addEventListener('deviceready', function () {
+                    // Salvando a tag de usuario.
+                    window.plugins.OneSignal.sendTag("user", username+"__");
+                  }, false);
+
                   ons.notification.alert('Login efetuado com sucesso.');
                   localStorage.setItem('token',ret.token);
 

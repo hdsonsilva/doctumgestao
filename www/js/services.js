@@ -132,7 +132,7 @@ myApp.services = {
       myApp.services.categories.bindOnCheckboxChange(categoryItem);
 
       // Attach the new category to the corresponding list.
-      document.querySelector('#custom-category-list').appendChild(categoryItem);
+      //document.querySelector('#custom-category-list').appendChild(categoryItem);
     },
 
     // On task creation/update, updates the category list adding new categories if needed.
@@ -153,7 +153,7 @@ myApp.services = {
 
       if (!categoryItem) {
         // If there are no tasks under this category, remove it.
-        myApp.services.categories.remove(document.querySelector('#custom-category-list ons-list-item[category-id="' + categoryId + '"]'));
+        //myApp.services.categories.remove(document.querySelector('#custom-category-list ons-list-item[category-id="' + categoryId + '"]'));
       }
     },
 

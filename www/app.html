@@ -19,6 +19,16 @@
 
 <body>
   <script>
+
+    function deslogar(){
+
+          localStorage.setItem('login_username', '');
+          localStorage.setItem('login_password', '');
+          localStorage.setItem('login_lembreme', 0);
+          window.location.href = './index.html';
+
+    }
+    
     $(document).ready(function(){
 
        $.post(
@@ -40,10 +50,7 @@
                 $('#progress').hide();
               },
               'json'
-            );  
-
-      
-
+            ); 
 
     });
   </script>

@@ -33,7 +33,7 @@ $(document).ready(function(){
             }
 
             $.post(
-              server_auth,
+              "https://financeiro.doctum.edu.br/sicof/usuarios/logintoken.php",
               {
                 'username'  : username,
                 'password'  : password,

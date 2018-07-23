@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
       
+      localStorage.setItem('server_auth',"https://financeiro.doctum.edu.br/sicof/usuarios/logintoken.php" );
 
       //Verificando se existem dados de usuario e senha salvos
       if(localStorage.getItem('login_lembreme') == 1){
@@ -33,7 +34,7 @@ $(document).ready(function(){
             }
 
             $.post(
-              "https://financeiro.doctum.edu.br/sicof/usuarios/logintoken.php",
+              localStorage.getItem('server_auth'),
               {
                 'username'  : username,
                 'password'  : password,

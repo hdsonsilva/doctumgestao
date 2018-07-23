@@ -48,7 +48,8 @@ $(document).ready(function(){
                     window.plugins.OneSignal.sendTag("user", username);
                   }, false);
 
-                  ons.notification.alert('Login efetuado com sucesso.');
+                  //ons.notification.alert('Login efetuado com sucesso.');
+                  //Armazenando o token
                   localStorage.setItem('token',ret.token);
 
                   window.location.href = './app.html';

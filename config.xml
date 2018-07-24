@@ -38,7 +38,6 @@
     <splash src="./www/img/Default@3x~universal~anycom.png" />
     <splash src="./www/img/Default@3x~universal~comany.png" />
     
-
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="./www/img/doctum800x800.png" />

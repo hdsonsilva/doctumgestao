@@ -31,12 +31,12 @@
     <allow-intent href="https://*/*" />
     <allow-intent href="geo:*" />
     
-    <splash src="./www/img/Default@2x~universal~anyany.png">
-    <splash src="./www/img/Default@2x~universal~comany.png">
-    <splash src="./www/img/Default@2x~universal~comcom.png">
-    <splash src="./www/img/Default@3x~universal~anyany.png">
-    <splash src="./www/img/Default@3x~universal~anycom.png">
-    <splash src="./www/img/Default@3x~universal~comany.png">
+    <splash src="./www/img/Default@2x~universal~anyany.png" />
+    <splash src="./www/img/Default@2x~universal~comany.png" />
+    <splash src="./www/img/Default@2x~universal~comcom.png" />
+    <splash src="./www/img/Default@3x~universal~anyany.png" />
+    <splash src="./www/img/Default@3x~universal~anycom.png" />
+    <splash src="./www/img/Default@3x~universal~comany.png" />
     
 
     <platform name="android">

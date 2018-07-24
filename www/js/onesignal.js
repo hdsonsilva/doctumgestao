@@ -7,7 +7,7 @@ document.addEventListener('deviceready', function () {
 	  };
 
 	  window.plugins.OneSignal
-	    .startInit(localStorage.getItem("idonesignal"))
+	    .startInit( localStorage.getItem("idonesignal") )
 	    .handleNotificationOpened(notificationOpenedCallback)
 	    .endInit();
 	}, false);

@@ -20,11 +20,12 @@
 <body>
   <script>
 
-    function deslogar(){
-
-          localStorage.setItem('login_username', '');
-          localStorage.setItem('login_password', '');
-          localStorage.setItem('login_lembreme', 0);
+    function deslogar(controle){
+          if(controle != 1){
+            localStorage.setItem('login_username', '');
+            localStorage.setItem('login_password', '');
+            localStorage.setItem('login_lembreme', 0);
+          }
           window.location.href = './index.html';
 
     }
@@ -41,7 +42,7 @@
                 }
                 else{
                   
-                  deslogar();
+                  deslogar(1);
                 }
                 //Exibindo o botao se o login der errado
                 $('#button').show();
@@ -84,7 +85,7 @@
             <ons-icon icon="ion-navicon, material:md-menu" size="32px, material:24px"></ons-icon>
           </ons-toolbar-button>
         </div>
-        <div class="center">Minhas tarefas</div>
+        <div class="center">Doctum</div>
         <div class="right">
           <!-- Toolbar-button  only visible for iOS/other. -->
           <ons-if platform="ios other">
@@ -94,18 +95,23 @@
       </ons-toolbar>
 
       <!-- Floating Action Button only visible for Android. -->
+      <!--
       <ons-if platform="android">
         <ons-fab position="right bottom" component="button/new-task">
           <ons-icon icon="md-edit"></ons-icon>
         </ons-fab>
       </ons-if>
-
+      -->
       <!-- Auto-positioned Tabbar: top on Android, bottom on iOS/other. -->
       
-      <ons-tabbar id="myTabbar" position="auto">
-        <ons-tab page="html/pending_tasks.html" label="Pending" active>
+      <ons-tabbar id="myTabbar" position="bottom">
+        <ons-tab page="html/home.html"  label="Home" active><ons-icon size="30px" icon="fa-home"></ons-icon>
         </ons-tab>
-        <ons-tab page="html/completed_tasks.html" label="Completed">
+        <ons-tab page="html/pending_tasks.html"><ons-icon size="30px" icon="fa-check-circle"></ons-icon>
+        </ons-tab>
+         <ons-tab page="html/pending_tasks.html" label="Autorizações"><ons-icon size="30px" icon="fa-archive"></ons-icon>
+        </ons-tab>
+        <ons-tab page="html/completed_tasks.html" ><ons-icon size="30px" icon="md-info"></ons-icon>
         </ons-tab>
       </ons-tabbar>
     </ons-page>

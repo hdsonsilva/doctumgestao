@@ -15,7 +15,6 @@ $(document).ready(function(){
       // Fazendo login
       $('#login').click( function(e) {
 
-
         var username = $('#username').val();
         var password = $('#password').val();
             //Escondendo botao no inicio do processo de login
@@ -62,7 +61,9 @@ $(document).ready(function(){
                 $('#progress').hide();
               },
               'json'
-            );  
+            ).fail(function() {
+              alert( "error" );
+          });  
       });
 
     });

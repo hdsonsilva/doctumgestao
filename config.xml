@@ -29,12 +29,12 @@
     
     <platform name="android">
         <allow-intent href="market:*" />
-        <icon density="ldpi" src="./callcentericon.png" />
-        <icon density="mdpi" src="./callcentericon.png" />
-        <icon density="hdpi" src="./callcentericon.png" />
-        <icon density="xhdpi" src="./callcentericon.png" />
-        <icon density="xxhdpi" src="./callcentericon.png" />
-        <icon density="xxxhdpi" src="./callcentericon.png" />
+        <icon density="ldpi" src="./www/img/doctum800x800.png" />
+        <icon density="mdpi" src="./www/img/doctum800x800.png" />
+        <icon density="hdpi" src="./www/img/doctum800x800.png" />
+        <icon density="xhdpi" src="./www/img/doctum800x800.png" />
+        <icon density="xxhdpi" src="./www/img/doctum800x800.png" />
+        <icon density="xxxhdpi" src="./www/img/doctum800x800.png" />
     </platform>
     
 </widget>

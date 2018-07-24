@@ -40,7 +40,6 @@
 
     </style>
 </head>
-
 <body>
 <ons-page  modifier="menu-page" >
     <!-- Cordova reference -->
@@ -55,7 +54,8 @@
         // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
         
         var notificationOpenedCallback = function(jsonData) {
-           console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+           
+           alert('notificationOpenedCallback: ' + JSON.stringify(jsonData);
         };
 
         window.plugins.OneSignal

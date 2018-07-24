@@ -2,7 +2,8 @@
 <widget id="io.doctum.gestao" version="1.0.0" xmlns:gap="http://phonegap.com/ns/1.1" xmlns:cdv="http://cordova.apache.org/ns/1.1">
     <name>Doctum Gestão</name>
     <description>
-        Gerenciamento de alguns processos que precisam de aprovação
+        Trabalhe mesmo em trânsito. Facilite sua vida ao realizar algumas aprovações em nossas plataformas.
+        O Doctum Gestão é o app para você que quer ser alertado em tempo real dos eventos que você precisa saber.
     </description>
 
     <author email="contato@doctum.edu.br" href="http://www.doctum.edu.br">

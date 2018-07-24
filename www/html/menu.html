@@ -1,10 +1,7 @@
 <ons-page id="menuPage">
-
   <ons-list-title>Links</ons-list-title>
   <ons-list id="links">
-    <ons-list-item tappable style="cursor: pointer" modifier="longdivider chevron"
-      onclick="window.open('https://github.com/frandiox/OnsenUI-Todo-App')"
-    >
+    <ons-list-item tappable="" style="cursor:pointer;" modifier="longdivider chevron" onclick="window.open('https://github.com/frandiox/OnsenUI-Todo-App')">
       <div class="left">
         <ons-icon icon="fa-external-link" style="color: grey;"></ons-icon>
       </div>
@@ -12,7 +9,7 @@
         Github repo
       </div>
     </ons-list-item>
-    <ons-list-item tappable style="cursor: pointer" modifier="longdivider chevron"
+    <ons-list-item tappable="" style="cursor: pointer" modifier="longdivider chevron"
       onclick="window.open('https://onsen.io/')"
     >
       <div class="left">
@@ -22,7 +19,7 @@
         Onsen UI 2.0
       </div>
     </ons-list-item>
-    <ons-list-item tappable style="cursor: pointer" modifier="longdivider chevron"
+    <ons-list-item tappable="" style="cursor: pointer" modifier="longdivider chevron"
       onclick="window.open('https://community.onsen.io/')"
     >
       <div class="left">
@@ -37,13 +34,13 @@
 
   <ons-list-title>Default</ons-list-title>
   <ons-list id="default-category-list">
-    <ons-list-item tappable>
+    <ons-list-item tappable="">
       <div class="left">
-        <ons-radio name="categoryGroup" input-id="r-all" checked></ons-radio>
+        <ons-radio name="categoryGroup" input-id="r-all" checked="1"></ons-radio>
       </div>
       <label class="center" for="r-all">All</label>
     </ons-list-item>
-    <ons-list-item tappable category-id="">
+    <ons-list-item tappable="" category-id="">
       <div class="left">
         <ons-radio name="categoryGroup" input-id="r-no"></ons-radio>
       </div>
@@ -54,7 +51,7 @@
   <ons-list-title>Outros</ons-list-title>
   <ons-list id="custom-category-list">
   </ons-list>
-  <ons-list-item tappable style="cursor: pointer" onclick="deslogar()" modifier="longdivider chevron" 
+  <ons-list-item tappable="" style="cursor: pointer" onclick="deslogar()" modifier="longdivider chevron" 
     >
       <div class="left">
         <ons-icon icon="fa-external-link" style="color: grey;"></ons-icon>

@@ -5,11 +5,12 @@
   <title>Doctum Gestão</title>
 
   <script src="lib/onsen/js/onsenui.js"></script>
-
+   <script src="js/config.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="./js/jquery.3.3.1.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="./js/login.js"></script>
 
   <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
   <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
@@ -26,10 +27,12 @@
             localStorage.setItem('login_password', '');
             localStorage.setItem('login_lembreme', 0);
           }
+          
           window.location.href = './index.html';
+          return false ;
 
     }
-    function verifica_auth(){
+    function verifica_auth(controle){
       $.post(
             localStorage.getItem('server_auth'),
               {
@@ -41,8 +44,9 @@
                   //ons.notification.alert(ret.token);;
                 }
                 else{
-                  
-                  deslogar(1);
+                  if(!login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'))){
+                    deslogar(1);
+                  }
                 }
                 //Exibindo o botao se o login der errado
                 $('#button').show();
@@ -52,8 +56,24 @@
             );
     }
     $(document).ready(function(){
+      ////////////////////// VERIFICACAO DE AUTH /////////////////////////////////
       verifica_auth();
-      setInterval(verifica_auth, 30000);
+      setInterval(verifica_auth, localStorage.getItem('app_timeverify_auth'));
+      ///////////////////////////////////////////////////////////////////////////
+      document.addEventListener('deviceready', function () {
+        // Enable to debug issues.
+        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+        
+        var notificationOpenedCallback = function(jsonData) {
+           
+          ons.notification.alert('notificationOpenedCallback: ' + JSON.stringify(jsonData)) ;
+        };
+
+        window.plugins.OneSignal
+          .startInit(localStorage.getItem('idonesignal'))
+          .handleNotificationOpened(notificationOpenedCallback  )
+          .endInit();
+      }, false);
 
     });
   </script>

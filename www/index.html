@@ -47,24 +47,34 @@
     <script src="./cordova.js"></script> 
     <script src="./scripts/index.js"></script>
     <script src="./js/login.js"></script>
-    <script src='./js/onesignal.js'></script>
-    <script>
-      document.addEventListener('deviceready', function () {
-        // Enable to debug issues.
-        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-        
-        var notificationOpenedCallback = function(jsonData) {
-           
-           alert('notificationOpenedCallback: ' + JSON.stringify(jsonData);
-        };
+    <script type="text/javascript">
+    $(document).ready(function(){
 
-        window.plugins.OneSignal
-          .startInit(localStorage.getItem('idonesignal'))
-          .handleNotificationOpened(notificationOpenedCallback)
-          .endInit();
-      }, false);
+      
+      //localStorage.setItem('server_auth',"https://financeiro.doctum.edu.br/sicof/usuarios/logintoken.php" );
 
-  </script>
+      //Verificando se existem dados de usuario e senha salvos
+      if(localStorage.getItem('login_lembreme') == 1){
+
+        $('#input-lembreme').prop('checked','1');
+        $('#username').val(localStorage.getItem('login_username'));
+        $('#password').val(localStorage.getItem('login_password'));
+
+      }
+
+      // Fazendo login
+      $('#login').click( function(e) {
+         if( login($('#username').val(),$('#password').val()) ){
+            ons.notification.alert('Login efetuado com sucesso.');
+            window.location.href = './app.html';
+         }
+
+
+    });
+  });
+
+    </script>
+    
    
    
    
@@ -73,23 +83,23 @@
   <div class='fundo'>
 
     <div class='login'>
-      <br>
-      <p style='margin-bottom: 40px;'>
+      <br/>
+      <p style='margin-bottom: 40px;position:relative'>
         <img src='./img/doctum800x270.png' width="40%">
       </p>
-      <p style='margin-bottom: 40px;'>
+      <p style='margin-bottom: 40px;position:relative'>
         <ons-input id="username"   modifier="underbar" placeholder="Usuário" float></ons-input>
       </p>
-      <p style='margin-bottom: 40px;'>
+      <p style='margin-bottom: 40px;position:relative'>
           <ons-input id="password"  modifier="underbar" type="password" placeholder="Senha" float></ons-input>
       </p>
       <p id='button'>
           <ons-button id='login'>Entrar</ons-button>
       </p>
-      <p id='progress' style="display:none">
+      <p id='progress' style="display:none";position:relative>
           <ons-progress-bar indeterminate></ons-progress-bar>
       </p>
-      <p style='text-align: center;vertical-align: middle;'>
+      <p style='text-align: center;vertical-align: middle;position:relative'>
          <ons-switch id="lembreme" input-id="input-lembreme"></ons-switch> Lembrar dados
       </p>
       

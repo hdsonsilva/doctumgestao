@@ -1,47 +1,38 @@
-$(document).ready(function(){
-
-      
-      //localStorage.setItem('server_auth',"https://financeiro.doctum.edu.br/sicof/usuarios/logintoken.php" );
-
-      //Verificando se existem dados de usuario e senha salvos
-      if(localStorage.getItem('login_lembreme') == 1){
-
-        $('#input-lembreme').prop('checked','1');
-        $('#username').val(localStorage.getItem('login_username'));
-        $('#password').val(localStorage.getItem('login_password'));
-
-      }
-
-      // Fazendo login
-      $('#login').click( function(e) {
-
-        var username = $('#username').val();
-        var password = $('#password').val();
+function login(usuario, senha){
+        var username = usuario ;
+        var password = senha ;
+        var ok = 0 ;
             //Escondendo botao no inicio do processo de login
             $('#button').hide();
             $('#progress').show();
             //Verificando o Lembre-se e armazenando os dados de login e senha
             if($('#input-lembreme').prop('checked')){
+              
               console.log('marcado' );
+              
               localStorage.setItem('login_username', username);
               localStorage.setItem('login_password', password);
               localStorage.setItem('login_lembreme', 1);
+
 
             }
             else{
               localStorage.setItem('login_lembreme', 0);
             }
 
-            $.post(
-              localStorage.getItem('server_auth'),
-              {
+            $.ajax({
+              type: 'POST',
+              url : localStorage.getItem('server_auth'),
+              data: {
                 'username'  : username,
                 'password'  : password,
                 'action'    : 'LOGIN'
               },
-              function(ret){
+              success:function(ret){
                 //Se retornar um token valido de acesso
+
                 if(ret.token){
+
                   document.addEventListener('deviceready', function () {
                     // Salvando a tag de usuario.
                     window.plugins.OneSignal.sendTag("user", username);
@@ -50,8 +41,8 @@ $(document).ready(function(){
                   //ons.notification.alert('Login efetuado com sucesso.');
                   //Armazenando o token
                   localStorage.setItem('token',ret.token);
-
-                  window.location.href = './app.html';
+                  
+                  ok  = 1 ;
                 }
                 else{
                   ons.notification.alert(ret.erro);
@@ -60,10 +51,9 @@ $(document).ready(function(){
                 $('#button').show();
                 $('#progress').hide();
               },
-              'json'
-            ).fail(function() {
-              alert( "error" );
-          });  
-      });
+              dataType:'json',
+              async:false
+          }); 
 
-    });
+        return ok ;
+}

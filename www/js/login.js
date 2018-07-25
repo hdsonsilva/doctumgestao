@@ -31,12 +31,8 @@ function login(usuario, senha, async){
 
                 if(ret.token){
                   auth_check  =1 ;
-                  document.addEventListener('deviceready', function () {
-                    // Salvando a tag de usuario.
-                    window.plugins.OneSignal.sendTag("user", username);
-                  }, false);
-
-                  //ons.notification.alert('Login efetuado com sucesso.');
+                  
+                  ons.notification.alert('Login efetuado com sucesso.');
                   //Armazenando o token
                   localStorage.setItem('token',ret.token);
                   

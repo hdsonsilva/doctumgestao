@@ -118,9 +118,9 @@
 <script type="text/javascript">
   document.addEventListener('deviceready', function () {
                     // Salvando a tag de usuario.
-                    window.plugins.OneSignal.sendTag("user", username);
+                    window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
                   }, false);
-  
+
   
 
 </script>

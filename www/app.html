@@ -128,7 +128,8 @@
         
         var notificationOpenedCallback = function(jsonData) {
            
-          ons.notification.alert('notificationOpenedCallback: ' + JSON.stringify(jsonData)) ;
+          ons.notification.alert('notificationOpenedCallback: ' + ) ;
+          $('#listaNotifications').append("<ons-list-item modifier='nodivider'><label class='center'  for='inner-highlight-input'>"+ JSON.stringify(jsonData) + " </label>    </ons-list-item>");
         };
 
         window.plugins.OneSignal
@@ -136,7 +137,7 @@
           .handleNotificationOpened(notificationOpenedCallback  )
           .endInit();
       }, false);
-  
+
 </script>
 </body>
 

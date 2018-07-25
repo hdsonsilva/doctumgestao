@@ -117,5 +117,22 @@
     </div>
   </div>
 </ons-page>
+<script type="text/javascript">
+  document.addEventListener('deviceready', function () {
+        // Enable to debug issues.
+        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+        
+        var notificationOpenedCallback = function(jsonData) {
+           
+          ons.notification.alert('notificationOpenedCallback: ' + ) ;
+          $('#listaNotifications').append("<ons-list-item modifier='nodivider'><label class='center'  for='inner-highlight-input'>"+ JSON.stringify(jsonData) + " </label>    </ons-list-item>");
+        };
+
+        window.plugins.OneSignal
+          .startInit(localStorage.getItem('idonesignal'))
+          .handleNotificationOpened(notificationOpenedCallback  )
+          .endInit();
+      }, false);
+</script>
 </body>
 </html>

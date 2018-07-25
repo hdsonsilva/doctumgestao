@@ -48,6 +48,21 @@
     <script src="./scripts/index.js"></script>
     <script src="./js/login.js"></script>
     <script type="text/javascript">
+    var auth_check ;
+    auth_check = 0 ;
+
+    setInterval(function(){
+      if(auth_check == 1){
+        window.location.href = 'app.html';
+      }
+      else if(auth_check == -1){
+        //Exibindo o botao se o login der errado
+        auth_check = 0 ;
+        ons.notification.alert('DADOS INVÁLIDOS');
+        $('#button').show();
+        $('#progress').hide();
+      }
+    },5000);
     $(document).ready(function(){
 
       
@@ -64,29 +79,17 @@
 
       // Fazendo login
       $('#login').click( function(e) {
+        auth_check = 0 ;
         //Escondendo botao no inicio do processo de login
         $('#button').hide();
         $('#progress').show();
-         if( login($('#username').val(),$('#password').val(), false ) ){
-            ons.notification.alert('Login efetuado com sucesso.');
-            window.location.href = './app.html';
-         }
-         else{
-            //Exibindo o botao se o login der errado
-            $('#button').show();
-            $('#progress').hide();
-         }
+        login($('#username').val(),$('#password').val(), true );
 
 
     });
   });
 
     </script>
-    
-   
-   
-   
-    
 
   <div class='fundo'>
 

@@ -21,13 +21,8 @@
 <body>
   <script>
 
-    function deslogar(controle){
-          if(controle != 1){
-            localStorage.setItem('login_username', '');
-            localStorage.setItem('login_password', '');
-            localStorage.setItem('login_lembreme', 0);
-          }
-          
+    function deslogar(){
+                  
           window.location.href = './index.html';
           return false ;
 
@@ -44,9 +39,8 @@
                   ons.notification.alert(ret.token);;
                 }
                 else{
-                  if(!login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'), false)){
-                    deslogar(1);
-                  }
+                  login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'), true);
+                  
                 }
                 //Exibindo o botao se o login der errado
                 $('#button').show();

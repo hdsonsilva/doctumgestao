@@ -30,7 +30,7 @@ function login(usuario, senha, async){
                 //Se retornar um token valido de acesso
 
                 if(ret.token){
-
+                  auth_check  =1 ;
                   document.addEventListener('deviceready', function () {
                     // Salvando a tag de usuario.
                     window.plugins.OneSignal.sendTag("user", username);
@@ -43,7 +43,7 @@ function login(usuario, senha, async){
                   ok  = 1 ;
                 }
                 else{
-                  ons.notification.alert(ret.erro);
+                  auth_check = -1 ;
                 }
               
               },

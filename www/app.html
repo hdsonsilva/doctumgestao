@@ -36,7 +36,7 @@
               },
               function(ret){
                 if(ret.token){
-                  ons.notification.alert(ret.token);;
+                  //ons.notification.alert(ret.token);;
                 }
                 else{
                   login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'), true);
@@ -116,9 +116,23 @@
     </ons-page>
   </template>
 <script type="text/javascript">
-  document.addEventListener('deviceready', function () {
-                    // Salvando a tag de usuario.
-                    window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
+  
+    document.addEventListener('deviceready', function () {
+        // Enable to debug issues.
+        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+        
+        var notificationOpenedCallback = function(jsonData) {
+           
+          $('#listaNotifications').append("<ons-list-item modifier='nodivider'><label class='center'  for='inner-highlight-input'>ok ok"+ JSON.stringify(jsonData) + " </label>    </ons-list-item>");
+        };
+
+        window.plugins.OneSignal
+          .startInit(localStorage.getItem('idonesignal'))
+          .handleNotificationOpened(notificationOpenedCallback  )
+          .endInit();
+
+          // Salvando a tag de usuario.
+          window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
                   }, false);
 
   

@@ -1,10 +1,8 @@
-function login(usuario, senha){
+function login(usuario, senha, async){
         var username = usuario ;
         var password = senha ;
         var ok = 0 ;
-            //Escondendo botao no inicio do processo de login
-            $('#button').hide();
-            $('#progress').show();
+            
             //Verificando o Lembre-se e armazenando os dados de login e senha
             if($('#input-lembreme').prop('checked')){
               
@@ -47,12 +45,10 @@ function login(usuario, senha){
                 else{
                   ons.notification.alert(ret.erro);
                 }
-                //Exibindo o botao se o login der errado
-                $('#button').show();
-                $('#progress').hide();
+              
               },
               dataType:'json',
-              async:false
+              async:async
           }); 
 
         return ok ;

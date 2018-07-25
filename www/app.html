@@ -41,10 +41,10 @@
               },
               function(ret){
                 if(ret.token){
-                  //ons.notification.alert(ret.token);;
+                  ons.notification.alert(ret.token);;
                 }
                 else{
-                  if(!login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'))){
+                  if(!login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'), false)){
                     deslogar(1);
                   }
                 }
@@ -60,21 +60,6 @@
       verifica_auth();
       setInterval(verifica_auth, localStorage.getItem('app_timeverify_auth'));
       ///////////////////////////////////////////////////////////////////////////
-      document.addEventListener('deviceready', function () {
-        // Enable to debug issues.
-        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-        
-        var notificationOpenedCallback = function(jsonData) {
-           
-          ons.notification.alert('notificationOpenedCallback: ' + JSON.stringify(jsonData)) ;
-        };
-
-        window.plugins.OneSignal
-          .startInit(localStorage.getItem('idonesignal'))
-          .handleNotificationOpened(notificationOpenedCallback  )
-          .endInit();
-      }, false);
-
     });
   </script>
 
@@ -136,7 +121,23 @@
       </ons-tabbar>
     </ons-page>
   </template>
+<script type="text/javascript">
+  document.addEventListener('deviceready', function () {
+        // Enable to debug issues.
+        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+        
+        var notificationOpenedCallback = function(jsonData) {
+           
+          ons.notification.alert('notificationOpenedCallback: ' + JSON.stringify(jsonData)) ;
+        };
 
+        window.plugins.OneSignal
+          .startInit(localStorage.getItem('idonesignal'))
+          .handleNotificationOpened(notificationOpenedCallback  )
+          .endInit();
+      }, false);
+  
+</script>
 </body>
 
 </html>

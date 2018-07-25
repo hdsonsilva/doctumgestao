@@ -64,9 +64,17 @@
 
       // Fazendo login
       $('#login').click( function(e) {
-         if( login($('#username').val(),$('#password').val()) ){
+        //Escondendo botao no inicio do processo de login
+        $('#button').hide();
+        $('#progress').show();
+         if( login($('#username').val(),$('#password').val(), false ) ){
             ons.notification.alert('Login efetuado com sucesso.');
             window.location.href = './app.html';
+         }
+         else{
+            //Exibindo o botao se o login der errado
+            $('#button').show();
+            $('#progress').hide();
          }
 
 

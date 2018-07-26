@@ -68,6 +68,8 @@
            
         ons.notification.alert('recebido');
 
+        }
+        
         window.plugins.OneSignal
           .startInit(localStorage.getItem('idonesignal'))
           .handleNotificationOpened(notificationOpenedCallback  )
@@ -75,7 +77,8 @@
 
           // Salvando a tag de usuario.
           window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
-                  }, false);
+
+          }, false);
     });
   </script>
 

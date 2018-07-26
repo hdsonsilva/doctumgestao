@@ -56,8 +56,10 @@
 
       /*Pegando retorno da notificação PUSH
       if(localStorage.getItem('pushInfo')){
-        ons.notification.alert(localStorage.getItem('pushInfo'));
+        ons.notification.alert(localStorage.getItem('idonesignal'));
       }*/
+
+      ons.notification.alert(localStorage.getItem('idonesignal'));
       
       setInterval(verifica_auth, localStorage.getItem('app_timeverify_auth'));
         

@@ -52,11 +52,30 @@
     $(document).ready(function(){
       ////////////////////// VERIFICACAO DE AUTH /////////////////////////////////
       verifica_auth();
+      
       setInterval(verifica_auth, localStorage.getItem('app_timeverify_auth'));
-
-      $('#listaNotifications').append("<ons-list-item modifier='nodivider'><label class='center'  for='inner-highlight-input'>ok ok </label>    </ons-list-item>");
         
       ///////////////////////////////////////////////////////////////////////////
+
+      document.addEventListener('deviceready', function () {
+        // Enable to debug issues.
+        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+        
+        ons.notification.alert('Evento disparado');
+
+
+        var notificationOpenedCallback = function(jsonData) {
+           
+        ons.notification.alert('recebido');
+
+        window.plugins.OneSignal
+          .startInit(localStorage.getItem('idonesignal'))
+          .handleNotificationOpened(notificationOpenedCallback  )
+          .endInit();
+
+          // Salvando a tag de usuario.
+          window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
+                  }, false);
     });
   </script>
 
@@ -120,22 +139,7 @@
   </template>
 <script type="text/javascript">
   
-    document.addEventListener('deviceready', function () {
-        // Enable to debug issues.
-        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-        
-        var notificationOpenedCallback = function(jsonData) {
-           
-        ons.notification.alert('recebido');
-
-        window.plugins.OneSignal
-          .startInit(localStorage.getItem('idonesignal'))
-          .handleNotificationOpened(notificationOpenedCallback  )
-          .endInit();
-
-          // Salvando a tag de usuario.
-          window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
-                  }, false);
+    
 
   
 

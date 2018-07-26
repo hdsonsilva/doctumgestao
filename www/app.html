@@ -20,7 +20,7 @@
 
 <body>
   <script>
-
+    var auth_check = 0 ;
     function deslogar(){
                   
           window.location.href = './index.html';
@@ -39,7 +39,8 @@
                   //ons.notification.alert(localStorage.getItem('login_username'));
                 }
                 else{
-                  login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'), true);
+                  
+                  login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'), 'app');
                   
                 }
                 //Exibindo o botao se o login der errado
@@ -64,6 +65,33 @@
 
 
     });
+
+    ///////////////// PUSH NOTIFICATION ////////////////////////////////////////
+     document.addEventListener('deviceready', function () {
+        // Enable to debug issues.
+        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+        
+        if(debug == 1)
+          ons.notification.alert('iniciando push');
+
+
+        var notificationOpenedCallback = function(jsonData) {
+           
+        if(debug == 1)
+          ons.notification.alert(JSON.stringify(jsonData));
+        
+        //Tesde de como pegar dados enviados no push
+        localStorage.setItem('pushInfo',jsonData.notification.payload.additionalData.sessao);
+
+
+        }
+        
+        window.plugins.OneSignal
+          .startInit(localStorage.getItem('idonesignal'))
+          .handleNotificationOpened(notificationOpenedCallback  )
+          .endInit();
+
+          }, false);
 
 
   </script>

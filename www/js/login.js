@@ -1,4 +1,4 @@
-function login(usuario, senha, exibir){
+function login(usuario, senha, app_){
         var username = usuario ;
         var password = senha ;
         var ok = 0 ;
@@ -30,7 +30,8 @@ function login(usuario, senha, exibir){
                 if(ret.token){
                   auth_check  = 1 ;
                   
-                  ons.notification.toast('Login efetuado com sucesso.', {timeout: 3000});
+                  if(app_ == 'index')
+                    ons.notification.toast('Login efetuado com sucesso.', {timeout: 3000});
                    //Armazenando o token
                   localStorage.setItem('token',ret.token);
                   localStorage.setItem('sys_nome',ret.nome);
@@ -46,7 +47,12 @@ function login(usuario, senha, exibir){
 
                 }
                 else{
+                  if(app_ == 'app'){
+                    window.location.href = './index.html';
+                  }
+
                   auth_check = -1 ;
+                
                 }
               
               },

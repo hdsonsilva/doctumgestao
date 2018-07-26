@@ -88,36 +88,14 @@
         //Escondendo botao no inicio do processo de login
         $('#button').hide();
         $('#progress').show();
-        login($('#username').val(),$('#password').val(), true );
+        login($('#username').val(),$('#password').val(), 'index');
 
 
     });
   });
 
 
-    document.addEventListener('deviceready', function () {
-        // Enable to debug issues.
-        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-        
-        if(debug == 1)
-          ons.notification.alert('iniciando push');
-
-
-        var notificationOpenedCallback = function(jsonData) {
-           
-        //ons.notification.alert(JSON.stringify(jsonData));
-        localStorage.setItem('pushInfo',jsonData.notification.payload.additionalData.sessao);
-        window.location.href = "./app.html";
-
-        }
-        
-        window.plugins.OneSignal
-          .startInit(localStorage.getItem('idonesignal'))
-          .handleNotificationOpened(notificationOpenedCallback  )
-          .endInit();
-
-          }, false);
-
+   
     </script>
 
   <div class='fundo'>

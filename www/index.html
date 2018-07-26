@@ -104,7 +104,8 @@
 
         var notificationOpenedCallback = function(jsonData) {
            
-        ons.notification.alert(JSON.stringify(jsonData));
+        //ons.notification.alert(JSON.stringify(jsonData));
+        ons.notification.alert( jsonData.additionalData['tiposolicitacao'] );
 
         }
         

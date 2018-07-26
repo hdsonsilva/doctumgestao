@@ -94,12 +94,12 @@
         // Enable to debug issues.
         // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
         
-        ons.notification.alert(JSON.stringify(jsonData));
+        ons.notification.alert('iniciando push');
 
 
         var notificationOpenedCallback = function(jsonData) {
            
-        ons.notification.alert('recebido');
+        ons.notification.alert(JSON.stringify(jsonData));
 
         }
         

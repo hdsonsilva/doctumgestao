@@ -19,17 +19,22 @@
     <style>
        
     .fundo{
-        position: absolute;
+      position: absolute;
        width: 100%;
-       height: 80%;
+       height: 95%;
+       
+    }
+    .interno{
+      position: relative;
+       width: 100%;
+       height: 100%;
        
     }
      .login{
-        margin: 30% auto ;
-        
+        margin: 5% auto ;
         text-align: center;
         width: 90%;
-        height: 85%;
+        height: 95%;
         background: white;
         -webkit-box-shadow: 1px 1px 20px rgba(50, 50, 50, 0.77);
         -moz-box-shadow:    1px 1px 20px rgba(50, 50, 50, 0.77);
@@ -115,6 +120,7 @@
   <div class='fundo'>
 
     <div class='login'>
+      <div class='interno'>
       <br/>
       <p style='margin-bottom: 40px;position:relative'>
         <img src='./img/doctum800x270.png' width="40%">
@@ -134,7 +140,7 @@
       <p style='text-align: center;vertical-align: middle;position:relative'>
          <ons-switch id="lembreme" input-id="input-lembreme"></ons-switch> Lembrar dados
       </p>
-      
+    </div>
     </div>
   </div>
 </ons-page>

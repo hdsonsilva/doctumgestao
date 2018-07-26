@@ -57,7 +57,10 @@
         
       ///////////////////////////////////////////////////////////////////////////
 
-      document.addEventListener('deviceready', function () {
+
+    });
+
+    document.addEventListener('deviceready', function () {
         // Enable to debug issues.
         // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
         
@@ -79,7 +82,6 @@
           window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
 
           }, false);
-    });
   </script>
 
   <!-- First navigation component: Navigator. This will remain always on top of the app. -->

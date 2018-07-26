@@ -36,7 +36,7 @@
               },
               function(ret){
                 if(ret.token){
-                  //ons.notification.alert(ret.token);;
+                  //ons.notification.alert(localStorage.getItem('login_username'));
                 }
                 else{
                   login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'), true);

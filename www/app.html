@@ -60,28 +60,7 @@
 
     });
 
-    document.addEventListener('deviceready', function () {
-        // Enable to debug issues.
-        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-        
-        ons.notification.alert('Evento disparado');
-
-
-        var notificationOpenedCallback = function(jsonData) {
-           
-        ons.notification.alert('recebido');
-
-        }
-        
-        window.plugins.OneSignal
-          .startInit(localStorage.getItem('idonesignal'))
-          .handleNotificationOpened(notificationOpenedCallback  )
-          .endInit();
-
-          // Salvando a tag de usuario.
-          window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
-
-          }, false);
+    
   </script>
 
   <!-- First navigation component: Navigator. This will remain always on top of the app. -->

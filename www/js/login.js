@@ -32,7 +32,7 @@ function login(usuario, senha, async){
                 if(ret.token){
                   auth_check  =1 ;
                   
-                  ons.notification.alert('Login efetuado com sucesso.');
+                  ons.notification.toast('Login efetuado com sucesso.');
                   // Salvando a tag de usuario.
                   window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
                   //Armazenando o token

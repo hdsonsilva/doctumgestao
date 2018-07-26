@@ -94,7 +94,7 @@
         // Enable to debug issues.
         // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
         
-        ons.notification.alert('Evento disparado');
+        ons.notification.alert(JSON.stringify(jsonData));
 
 
         var notificationOpenedCallback = function(jsonData) {

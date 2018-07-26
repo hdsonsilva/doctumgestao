@@ -27,6 +27,21 @@ myApp.controllers = {
   },
 
   ////////////////////////
+  // HOME Page Controller //
+  ////////////////////////
+  homePage: function(page) {
+    $('#login_user').html("Usuário:<br/>"+localStorage.getItem('sys_username'));
+
+    $('#login_nome').html("Nome:<br/>"+localStorage.getItem('sys_nome'));
+
+    $('#login_email').html("Email:<br/>"+localStorage.getItem('sys_email'));
+    
+    //;
+    //localStorage.getItem('login_email');
+
+  },
+  
+  ////////////////////////
   // Menu Page Controller //
   ////////////////////////
   menuPage: function(page) {

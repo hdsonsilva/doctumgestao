@@ -53,6 +53,9 @@
       ////////////////////// VERIFICACAO DE AUTH /////////////////////////////////
       verifica_auth();
       setInterval(verifica_auth, localStorage.getItem('app_timeverify_auth'));
+
+      $('#listaNotifications').append("<ons-list-item modifier='nodivider'><label class='center'  for='inner-highlight-input'>ok ok </label>    </ons-list-item>");
+        
       ///////////////////////////////////////////////////////////////////////////
     });
   </script>
@@ -104,13 +107,13 @@
       <!-- Auto-positioned Tabbar: top on Android, bottom on iOS/other. -->
       
       <ons-tabbar id="myTabbar" position="bottom">
-        <ons-tab page="html/home_page.html"  label="Home" active><ons-icon size="30px" icon="fa-home"></ons-icon>
+        <ons-tab page="html/home_page.html"  label="Home" ><ons-icon size="30px" icon="fa-home"></ons-icon>
         </ons-tab>
         <ons-tab page="html/pending_tasks.html"><ons-icon size="30px" icon="fa-check-circle"></ons-icon>
         </ons-tab>
          <ons-tab page="html/completed_tasks.html" label="Autorizações"><ons-icon size="30px" icon="fa-archive"></ons-icon>
         </ons-tab>
-        <ons-tab page="html/info.html" ><ons-icon size="30px" icon="md-info"></ons-icon>
+        <ons-tab page="html/info.html"  active><ons-icon size="30px" icon="md-info"></ons-icon>
         </ons-tab>
       </ons-tabbar>
     </ons-page>
@@ -123,8 +126,7 @@
         
         var notificationOpenedCallback = function(jsonData) {
            
-          $('#listaNotifications').append("<ons-list-item modifier='nodivider'><label class='center'  for='inner-highlight-input'>ok ok"+ JSON.stringify(jsonData) + " </label>    </ons-list-item>");
-        };
+          window.notification.alert('recebido');
 
         window.plugins.OneSignal
           .startInit(localStorage.getItem('idonesignal'))

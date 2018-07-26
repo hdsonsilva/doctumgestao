@@ -54,10 +54,10 @@
       ////////////////////// VERIFICACAO DE AUTH /////////////////////////////////
       verifica_auth();
 
-      //Pegando retorno da notificação PUSH
+      /*Pegando retorno da notificação PUSH
       if(localStorage.getItem('pushInfo')){
         ons.notification.alert(localStorage.getItem('pushInfo'));
-      }
+      }*/
       
       setInterval(verifica_auth, localStorage.getItem('app_timeverify_auth'));
         

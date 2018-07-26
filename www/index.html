@@ -58,7 +58,7 @@
       else if(auth_check == -1){
         //Exibindo o botao se o login der errado
         auth_check = 0 ;
-        ons.notification.toast('DADOS INVÁLIDOS');
+        ons.notification.toast('DADOS INVÁLIDOS', {timeout: 3000});
         $('#button').show();
         $('#progress').hide();
       }

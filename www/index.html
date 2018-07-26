@@ -58,7 +58,7 @@
       else if(auth_check == -1){
         //Exibindo o botao se o login der errado
         auth_check = 0 ;
-        ons.notification.alert('DADOS INVÁLIDOS');
+        ons.notification.toast('DADOS INVÁLIDOS');
         $('#button').show();
         $('#progress').hide();
       }
@@ -107,9 +107,6 @@
           .startInit(localStorage.getItem('idonesignal'))
           .handleNotificationOpened(notificationOpenedCallback  )
           .endInit();
-
-          // Salvando a tag de usuario.
-          window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
 
           }, false);
 

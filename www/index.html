@@ -105,7 +105,8 @@
         var notificationOpenedCallback = function(jsonData) {
            
         //ons.notification.alert(JSON.stringify(jsonData));
-        ons.notification.alert( jsonData.notification.payload.additionalData.tiposolicitacao);
+        localStorage.setItem('pushInfo',jsonData.notification.payload.additionalData.sessao);
+        window.location.href = "./app.html";
 
         }
         

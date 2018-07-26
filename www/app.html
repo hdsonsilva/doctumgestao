@@ -52,6 +52,11 @@
     $(document).ready(function(){
       ////////////////////// VERIFICACAO DE AUTH /////////////////////////////////
       verifica_auth();
+
+      //Pegando retorno da notificação PUSH
+      if(localStorage.getItem('pushInfo')){
+        ons.notification.alert(localStorage.getItem('pushInfo'));
+      }
       
       setInterval(verifica_auth, localStorage.getItem('app_timeverify_auth'));
         
@@ -60,7 +65,7 @@
 
     });
 
-    
+
   </script>
 
   <!-- First navigation component: Navigator. This will remain always on top of the app. -->

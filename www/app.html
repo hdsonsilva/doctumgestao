@@ -70,7 +70,7 @@
           if(debug == 1){
             ons.notification.alert(JSON.stringify(jsonData.notification.payload.additionalData));
           }
-          s
+          
         //Teste de como pegar dados s no push
         //localStorage.setItem('pushInfo',jsonData.notification.payload.additionalData.sessao);
 
@@ -78,10 +78,12 @@
             {
               animation: 'lift',
               data: {
-                element:  jsonData
+                element:  jsonData.notification.payload.additionalData
               }
             }
           );
+
+          ons.notification.alert('final');
         }
         
         window.plugins.OneSignal

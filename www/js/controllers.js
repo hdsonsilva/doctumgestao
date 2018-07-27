@@ -95,11 +95,11 @@ myApp.controllers = {
     var element = page.data.element;
 
     // Fill the view with the stored data.
-    page.querySelector('#title-input').value = element.data.title;
-    page.querySelector('#category-input').value = element.data.category;
-    page.querySelector('#description-input').value = element.data.description;
-    page.querySelector('#highlight-input').checked = element.data.highlight;
-    page.querySelector('#urgent-input').checked = 1;
+    page.querySelector('#title-input').value = element.titulo;
+    page.querySelector('#category-input').value = element.tiposolicitacao;
+    //page.querySelector('#description-input').value = element.data.description;
+    //page.querySelector('#highlight-input').checked = element.data.highlight;
+    //page.querySelector('#urgent-input').checked = 1;
 
     // Set button functionality to save an existing task.
     page.querySelector('[component="button/save-task"]').onclick = function() {

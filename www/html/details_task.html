@@ -1,7 +1,7 @@
 <ons-page id="detailsTaskPage">
   <ons-toolbar>
     <div class="left"><ons-back-button>Back</ons-back-button></div>
-    <div class="center">Task Details</div>
+    <div class="center">Detalhes da Solicitação</div>
     <div class="right">
       <ons-toolbar-button component="button/save-task">
         <ons-if platform="android">
@@ -14,22 +14,22 @@
     </div>
   </ons-toolbar>
 
-  <ons-list-title>Modify your task</ons-list-title>
+  <ons-list-title>:::::::</ons-list-title>
   <ons-list>
     <ons-list-item modifier="nodivider">
       <ons-if platform="ios other" class="left left-label">
-        Title
+        Titulo
       </ons-if>
       <div class="center">
-        <ons-input id="title-input" type="text" placeholder="I want to..." float></ons-input>
+        <ons-input id="title-input" type="text" disabled placeholder="" float></ons-input>
       </div>
     </ons-list-item>
     <ons-list-item modifier="nodivider">
       <ons-if platform="ios other" class="left left-label">
-        Category
+        Tipo
       </ons-if>
       <div class="center">
-        <ons-input id="category-input" type="text" placeholder="Category" float></ons-input>
+        <ons-input id="category-input" type="text" disabled  placeholder="" float></ons-input>
       </div>
     </ons-list-item>
     <ons-list-item modifier="nodivider">
@@ -42,23 +42,5 @@
     </ons-list-item>
   </ons-list>
 
-  <ons-list-title>Other options</ons-list-title>
-  <ons-list>
-    <ons-list-item modifier="nodivider">
-      <label class="center" for="inner-highlight-input">
-        Highlight?
-      </label>
-      <div class="right">
-        <ons-switch id="highlight-input" input-id="inner-highlight-input"></ons-switch>
-      </div>
-    </ons-list-item>
-    <ons-list-item modifier="nodivider">
-      <label class="center" for="inner-urgent-input">
-        Is it urgent?
-      </label>
-      <div class="right">
-        <ons-switch id="urgent-input" input-id="inner-urgent-input" disabled></ons-switch>
-      </div>
-    </ons-list-item>
-  </ons-list>
+  
 </ons-page>

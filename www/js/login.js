@@ -37,6 +37,7 @@ function login(usuario, senha, app_){
                   localStorage.setItem('sys_nome',ret.nome);
                   localStorage.setItem('sys_email',ret.email);
                   localStorage.setItem('sys_username',ret.usuario);
+                  localStorage.setItem('sys_iduser',ret.idusuario);
                   
                   
                   

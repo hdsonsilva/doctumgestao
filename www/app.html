@@ -60,18 +60,28 @@
         // Enable to debug issues.
         // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
         
-        //if(debug == 1){
+        if(debug == 1){
           ons.notification.alert('iniciando push');
-        //}
+        }
 
 
         var notificationOpenedCallback = function(jsonData) {
            
-          //if(debug == 1){
-            ons.notification.alert(JSON.stringify(jsonData));
-          //}
-        //Teste de como pegar dados enviados no push
+          if(debug == 1){
+            ons.notification.alert(JSON.stringify(jsonData.notification.payload.additionalData));
+          }
+          s
+        //Teste de como pegar dados s no push
         //localStorage.setItem('pushInfo',jsonData.notification.payload.additionalData.sessao);
+
+          document.querySelector('#myNavigator').pushPage('html/details_task.html',
+            {
+              animation: 'lift',
+              data: {
+                element:  jsonData.notification.payload.additionalData
+              }
+            }
+          );
         }
         
         window.plugins.OneSignal
@@ -95,19 +105,19 @@
         ons.notification.alert(localStorage.getItem('idonesignal'));
       }*/
 
-      ons.notification.alert(localStorage.getItem('idonesignal'));
+      //ons.notification.alert(localStorage.getItem('idonesignal'));
       
       setInterval(verifica_auth, localStorage.getItem('app_timeverify_auth'));
         
       ///////////////////////////////////////////////////////////////////////////
 
-
+      
     });
 
   </script>
 
   <!-- First navigation component: Navigator. This will remain always on top of the app. -->
-  <ons-navigator id="myNavigator" page="splitter.html">
+  <ons-navigator id="myNavigator" page="splitter.html"> 
   </ons-navigator>
 
 
@@ -133,7 +143,7 @@
             <ons-icon icon="ion-navicon, material:md-menu" size="32px, material:24px"></ons-icon>
           </ons-toolbar-button>
         </div>
-        <div class="center" id="tituloApp">Doctum .::. Inicio</div>
+        <div class="center" id="tituloApp">Doctum .::. Gestão</div>
         <div class="right">
           <!-- Toolbar-button  only visible for iOS/other. -->
           <ons-if platform="ios other">
@@ -153,51 +163,18 @@
       <!-- Auto-positioned Tabbar: top on Android, bottom on iOS/other. -->
       
       <ons-tabbar id="myTabbar" position="bottom">
-        <ons-tab page="html/home_page.html"  active label="Home" ><ons-icon size="30px" icon="fa-home"></ons-icon>
+        <ons-tab id='activehome' page="html/home_page.html"  active label="Home" ><ons-icon size="30px" icon="fa-home"></ons-icon>
         </ons-tab>
-        <ons-tab page="html/pending_tasks.html"><ons-icon size="30px" icon="fa-check-circle"></ons-icon>
+        <ons-tab id='activependente'  page="html/pending_tasks.html"><ons-icon size="30px" icon="fa-check-circle"></ons-icon>
         </ons-tab>
-         <ons-tab page="html/completed_tasks.html" label="Autorizações"><ons-icon size="30px" icon="fa-archive"></ons-icon>
+         <ons-tab id='activeconcluido' page="html/completed_tasks.html" label="Autorizações"><ons-icon size="30px" icon="fa-archive"></ons-icon>
         </ons-tab>
         <ons-tab page="html/info.html"><ons-icon size="30px" icon="md-info"></ons-icon>
         </ons-tab>
       </ons-tabbar>
     </ons-page>
   </template>
-<script type="text/javascript">
-   ///////////////// PUSH NOTIFICATION ////////////////////////////////////////
-     document.addEventListener('deviceready', function () {
-        //Desativar botao voltar
-        document.addEventListener("backbutton", function(){navigator.app.exitApp();} , false);
 
-        // Enable to debug issues.
-        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-        
-        //if(debug == 1){
-          ons.notification.alert('iniciando push');
-        //}
-
-
-        var notificationOpenedCallback = function(jsonData) {
-           
-          //if(debug == 1){
-            ons.notification.alert(JSON.stringify(jsonData));
-          //}
-        //Teste de como pegar dados enviados no push
-        //localStorage.setItem('pushInfo',jsonData.notification.payload.additionalData.sessao);
-        }
-        
-        window.plugins.OneSignal
-          .startInit(localStorage.getItem('idonesignal'))
-          .handleNotificationOpened(notificationOpenedCallback  )
-          .endInit();
-
-        window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
-
-          }, false);
-
-
-</script>
 </body>
 
 </html>

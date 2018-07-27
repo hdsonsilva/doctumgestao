@@ -71,7 +71,7 @@
     ///////////////// PUSH NOTIFICATION ////////////////////////////////////////
      document.addEventListener('deviceready', function () {
         //Desativar botao voltar
-        //document.addEventListener("backbutton", function(){navigator.app.exitApp();} , false);
+        document.addEventListener("backbutton", function(){navigator.app.exitApp();} , false);
 
         // Enable to debug issues.
         // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
@@ -83,14 +83,11 @@
 
         var notificationOpenedCallback = function(jsonData) {
            
-        if(debug == 1){
-          ons.notification.alert(JSON.stringify(jsonData));
-        }
-        
+          if(debug == 1){
+            ons.notification.alert(JSON.stringify(jsonData));
+          }
         //Teste de como pegar dados enviados no push
         //localStorage.setItem('pushInfo',jsonData.notification.payload.additionalData.sessao);
-
-
         }
         
         window.plugins.OneSignal
@@ -99,8 +96,6 @@
           .endInit();
 
           }, false);
-
-
   </script>
 
   <!-- First navigation component: Navigator. This will remain always on top of the app. -->

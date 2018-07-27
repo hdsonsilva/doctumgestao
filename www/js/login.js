@@ -38,10 +38,7 @@ function login(usuario, senha, app_){
                   localStorage.setItem('sys_email',ret.email);
                   localStorage.setItem('sys_username',ret.usuario);
                   
-                  // Salvando a tag de usuario. 
-                  //document.addEventListener('deviceready', function () {
-                  //  window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
-                  // }, false);
+                  
                   
                   ok  = 1 ;
 

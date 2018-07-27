@@ -79,9 +79,13 @@
           .handleNotificationOpened(notificationOpenedCallback  )
           .endInit();
 
+        window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
+        
           }, false);
 
-     
+
+
+
     $(document).ready(function(){
       ////////////////////// VERIFICACAO DE AUTH /////////////////////////////////
       verifica_auth();

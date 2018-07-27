@@ -67,11 +67,11 @@
 
 
     });
-
+    document.addEventListener("backbutton", function(){navigator.app.exitApp();} , false);
     ///////////////// PUSH NOTIFICATION ////////////////////////////////////////
      document.addEventListener('deviceready', function () {
         //Desativar botao voltar
-        document.addEventListener("backbutton", function(){navigator.app.exitApp();} , false);
+        
 
         // Enable to debug issues.
         // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});

@@ -60,16 +60,16 @@
         // Enable to debug issues.
         // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
         
-        if(debug == 1){
+        //if(debug == 1){
           ons.notification.alert('iniciando push');
-        }
+        //}
 
 
         var notificationOpenedCallback = function(jsonData) {
            
-          if(debug == 1){
+          //if(debug == 1){
             ons.notification.alert(JSON.stringify(jsonData));
-          }
+          //}
         //Teste de como pegar dados enviados no push
         //localStorage.setItem('pushInfo',jsonData.notification.payload.additionalData.sessao);
         }
@@ -80,7 +80,7 @@
           .endInit();
 
         window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
-        
+
           }, false);
 
 
@@ -153,24 +153,17 @@
       <!-- Auto-positioned Tabbar: top on Android, bottom on iOS/other. -->
       
       <ons-tabbar id="myTabbar" position="bottom">
-        <ons-tab page="html/home_page.html"  label="Home" ><ons-icon size="30px" icon="fa-home"></ons-icon>
+        <ons-tab page="html/home_page.html"  active label="Home" ><ons-icon size="30px" icon="fa-home"></ons-icon>
         </ons-tab>
         <ons-tab page="html/pending_tasks.html"><ons-icon size="30px" icon="fa-check-circle"></ons-icon>
         </ons-tab>
          <ons-tab page="html/completed_tasks.html" label="Autorizações"><ons-icon size="30px" icon="fa-archive"></ons-icon>
         </ons-tab>
-        <ons-tab page="html/info.html"  active><ons-icon size="30px" icon="md-info"></ons-icon>
+        <ons-tab page="html/info.html"><ons-icon size="30px" icon="md-info"></ons-icon>
         </ons-tab>
       </ons-tabbar>
     </ons-page>
   </template>
-<script type="text/javascript">
-  
-    
-
-  
-
-</script>
 </body>
 
 </html>

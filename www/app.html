@@ -50,28 +50,12 @@
               'json'
             );
     }
-    $(document).ready(function(){
-      ////////////////////// VERIFICACAO DE AUTH /////////////////////////////////
-      verifica_auth();
 
-      /*Pegando retorno da notificação PUSH
-      if(localStorage.getItem('pushInfo')){
-        ons.notification.alert(localStorage.getItem('idonesignal'));
-      }*/
-
-      ons.notification.alert(localStorage.getItem('idonesignal'));
-      
-      setInterval(verifica_auth, localStorage.getItem('app_timeverify_auth'));
-        
-      ///////////////////////////////////////////////////////////////////////////
-
-
-    });
-    document.addEventListener("backbutton", function(){navigator.app.exitApp();} , false);
+    
     ///////////////// PUSH NOTIFICATION ////////////////////////////////////////
      document.addEventListener('deviceready', function () {
         //Desativar botao voltar
-        
+        document.addEventListener("backbutton", function(){navigator.app.exitApp();} , false);
 
         // Enable to debug issues.
         // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
@@ -96,6 +80,26 @@
           .endInit();
 
           }, false);
+
+     
+    $(document).ready(function(){
+      ////////////////////// VERIFICACAO DE AUTH /////////////////////////////////
+      verifica_auth();
+
+      /*Pegando retorno da notificação PUSH
+      if(localStorage.getItem('pushInfo')){
+        ons.notification.alert(localStorage.getItem('idonesignal'));
+      }*/
+
+      ons.notification.alert(localStorage.getItem('idonesignal'));
+      
+      setInterval(verifica_auth, localStorage.getItem('app_timeverify_auth'));
+        
+      ///////////////////////////////////////////////////////////////////////////
+
+
+    });
+
   </script>
 
   <!-- First navigation component: Navigator. This will remain always on top of the app. -->

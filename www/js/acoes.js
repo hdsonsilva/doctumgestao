@@ -29,6 +29,6 @@ function buscaAcoes(){
               
               },
               dataType:'json',
-              async:false
+              async:true
           }); 
 }

@@ -57,7 +57,7 @@ function login(usuario, senha, app_){
               
               },
               dataType:'json',
-              async:false
+              async:true
           }); 
 
         return ok ;

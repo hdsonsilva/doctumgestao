@@ -81,7 +81,9 @@ myApp.controllers = {
 
         } else {
           // Show alert if the input title is empty.
-          ons.notification.alert('You must provide a task title.');
+          if(debug == 1){
+            ons.notification.alert('You must provide a task title.');
+          }
         }
       };
     });
@@ -93,8 +95,9 @@ myApp.controllers = {
   detailsTaskPage: function(page) {
     // Get the element passed as argument to pushPage.
     var element = page.data.element;
-
-    ons.notification.alert('aqui');
+    if(debug == 1){
+      ons.notification.alert('aqui');
+    }
 
     // Fill the view with the stored data.
     page.querySelector('#title-input').value = element.titulo;

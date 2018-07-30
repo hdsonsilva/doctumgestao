@@ -26,7 +26,9 @@ function login(usuario, senha, app_){
               },
               success:function(ret){
                 //Se retornar um token valido de acesso
-                ons.notification.alert(JSON.stringify(ret));
+                 if(debug == 1){
+                  ons.notification.alert(JSON.stringify(ret));
+                }
                 if(ret.token){
                   auth_check  = 1 ;
                   

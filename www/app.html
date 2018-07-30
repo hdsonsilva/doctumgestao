@@ -11,6 +11,7 @@
   <script src="./js/jquery.3.3.1.js"></script>
   <script src="js/controllers.js"></script>
   <script src="./js/login.js"></script>
+  <script src="./js/acoes.js"></script>
 
   <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
   <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
@@ -21,6 +22,21 @@
 <body>
   <script>
     var auth_check = 0 ;
+
+    function showModal(controle) {
+      var modal = document.querySelector('ons-modal');
+      if(controle == 'show'){
+        modal.show();
+      
+        setTimeout(function() {
+          modal.hide();
+        }, 10000);
+      }
+      else{
+        modal.hide();
+      }
+    }
+
     function deslogar(){
                   
           window.location.href = './index.html';
@@ -51,7 +67,18 @@
             );
     }
 
-    
+    ////////////////////// EVENTOS SHOW PAGE //////////////////////////////////Q
+
+
+      //Atualizando a lista de tarefas para o usuario
+      document.addEventListener('show', function(event) {
+        if (event.target.matches('#pendingTasksPage')) {
+          
+          //////////////////////////////////////////////////////////
+          buscaAcoes();
+          ////////////////////////////////////////////////////////////
+        }
+      }, false);
     ///////////////// PUSH NOTIFICATION ////////////////////////////////////////
      document.addEventListener('deviceready', function () {
         //Desativar botao voltar
@@ -64,7 +91,7 @@
           ons.notification.alert('iniciando push');
         }
 
-
+        /////////////////// ACAO EXECUTADA QUANDO SE CLICA NA NOTIFICACAO PUSH////////
         var notificationOpenedCallback = function(jsonData) {
            
           if(debug == 1){
@@ -82,8 +109,10 @@
               }
             }
           );
-
-          ons.notification.alert('final');
+          
+          if(debug == 1){
+            ons.notification.alert('final');
+          }
         }
         
         window.plugins.OneSignal
@@ -100,19 +129,16 @@
 
     $(document).ready(function(){
       ////////////////////// VERIFICACAO DE AUTH /////////////////////////////////
+      
       verifica_auth();
-
       /*Pegando retorno da notificação PUSH
       if(localStorage.getItem('pushInfo')){
         ons.notification.alert(localStorage.getItem('idonesignal'));
       }*/
-
       //ons.notification.alert(localStorage.getItem('idonesignal'));
-      
-      setInterval(verifica_auth, localStorage.getItem('app_timeverify_auth'));
+      setInterval(verifica_auth, localStorage.getItem( 'app_timeverify_auth' ));
         
-      ///////////////////////////////////////////////////////////////////////////
-
+      
       
     });
 
@@ -176,7 +202,13 @@
       </ons-tabbar>
     </ons-page>
   </template>
-
+<ons-modal direction="up">
+  <div style="text-align: center">
+    <p>
+      <ons-icon icon="md-spinner" size="28px" spin></ons-icon> Loading...
+    </p>
+  </div>
+</ons-modal>
 </body>
 
 </html>

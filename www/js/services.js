@@ -13,12 +13,12 @@ myApp.services = {
     create: function(data) {
       // Task item template.
       var taskItem = ons.createElement(
-        '<ons-list-item tappable category="' + myApp.services.categories.parseId(data.category)+ '">' +
+        '<ons-list-item tappable category="' + myApp.services.categories.parseId(data.categoria)+ '">' +
           '<label class="left">' +
            '<ons-checkbox></ons-checkbox>' +
           '</label>' +
           '<div class="center">' +
-            data.title +
+            data.titulo +
           '</div>' +
           '<div class="right">' +
             '<ons-icon style="color: grey; padding-left: 4px" icon="ion-ios-trash-outline, material:md-delete"></ons-icon>' +
@@ -51,7 +51,7 @@ myApp.services = {
             {
               animation: 'lift',
               data: {
-                element: taskItem
+                element: taskItem.data
               }
             }
           );

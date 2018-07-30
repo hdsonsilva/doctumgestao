@@ -94,6 +94,8 @@ myApp.controllers = {
     // Get the element passed as argument to pushPage.
     var element = page.data.element;
 
+    ons.notification.alert('aqui');
+
     // Fill the view with the stored data.
     page.querySelector('#title-input').value = element.titulo;
     page.querySelector('#category-input').value = element.tiposolicitacao;

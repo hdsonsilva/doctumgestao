@@ -10,10 +10,10 @@ function buscaAcoes(){
               success:function(ret){
                 //Se retornar um token valido de acesso
                 
-                if(ret.dados){
-                  //ons.notification.alert(JSON.stringify(myApp.services));
-                  
-                  
+                if(ret.dados){  
+                  //Limpando lista de tarefas           
+                  $('#pending-list').html('');
+                  //Criando nova lista de tarefas que acabaram de ser retornadas
                   for ( i in ret.dados){
                     myApp.services.tasks.create(ret.dados[i]);
                   }

@@ -137,12 +137,7 @@
       }*/
       //ons.notification.alert(localStorage.getItem('idonesignal'));
       setInterval(verifica_auth, localStorage.getItem( 'app_timeverify_auth' ));
-        
       
-      //////////////////////// Recarregando pagina///////////////////////////////
-      $('#buttonreload').click(function(){
-        buscaAcoes();
-      });
     });
 
   </script>
@@ -178,7 +173,7 @@
         
         <div class="right">
                    <!-- Toolbar-button  only visible for iOS/other. -->
-          <ons-button ng-click="ons.notification.alert('ok')" component="buttonreload">
+          <ons-button id="buttonreload" component="buttonreload">
             <ons-icon icon="ion-refresh-circle"></ons-icon>
           </ons-button>
         </div>

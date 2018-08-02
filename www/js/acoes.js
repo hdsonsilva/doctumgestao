@@ -17,6 +17,7 @@ function buscaAcoes(){
                   for ( i in ret.dados){
                     myApp.services.tasks.create(ret.dados[i]);
                   }
+
                   
                 }
                 else{
@@ -26,6 +27,10 @@ function buscaAcoes(){
                 }
 
                 showModal('hide');
+                //////////////////////// Recarregando pagina///////////////////////////////
+                $('#buttonreload').click(function(){
+                  buscaAcoes();
+                });
               
               },
               dataType:'json',

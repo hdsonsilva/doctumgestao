@@ -107,7 +107,7 @@ myApp.controllers = {
     //page.querySelector('#urgent-input').checked = 1;
     $('#verweb').click(function(){
 
-      navigator.app.loadUrl(element.page+"?"+element.tiposolicitacao+"="+element.idsolicitacao+"&token="+localStorage.getItem('token'), { openExternal: true });
+      navigator.app.loadUrl(element.page+"?"+element.dados.tiposolicitacao+"="+element.dados.idsolicitacao+"&token="+localStorage.getItem('token'), { openExternal: true });
 
     });
 

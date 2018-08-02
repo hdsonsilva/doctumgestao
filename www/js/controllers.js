@@ -105,43 +105,12 @@ myApp.controllers = {
     //page.querySelector('#description-input').value = element.data.description;
     //page.querySelector('#highlight-input').checked = element.data.highlight;
     //page.querySelector('#urgent-input').checked = 1;
+    $('#verweb').click(function(){
 
-    // Set button functionality to save an existing task.
-    page.querySelector('[component="button/save-task"]').onclick = function() {
-      var newTitle = page.querySelector('#title-input').value;
+      navigator.app.loadUrl(element.page+"?"+element.tiposolicitacao+"="+element.idsolicitacao+"&token="+localStorage.getItem('token'), { openExternal: true });
 
-      if (newTitle) {
-        // If input title is not empty, ask for confirmation before saving.
-        ons.notification.confirm(
-          {
-            title: 'Save changes?',
-            message: 'Previous data will be overwritten.',
-            buttonLabels: ['Discard', 'Save']
-          }
-        ).then(function(buttonIndex) {
-          if (buttonIndex === 1) {
-            // If 'Save' button was pressed, overwrite the task.
-            myApp.services.tasks.update(element,
-              {
-                title: newTitle,
-                category: page.querySelector('#category-input').value,
-                description: page.querySelector('#description-input').value,
-                ugent: element.data.urgent,
-                highlight: page.querySelector('#highlight-input').checked
-              }
-            );
+    });
 
-            // Set selected category to 'All', refresh and pop page.
-            document.querySelector('#default-category-list ons-list-item ons-radio').checked = true;
-            document.querySelector('#default-category-list ons-list-item').updateCategoryView();
-            document.querySelector('#myNavigator').popPage();
-          }
-        });
-
-      } else {
-        // Show alert if the input title is empty.
-        ons.notification.alert('You must provide a task title.');
-      }
-    };
+    
   }
 };

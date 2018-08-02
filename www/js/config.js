@@ -1,5 +1,5 @@
 //var server = 'https://financeiro.doctum.edu.br/sicof/webservice/';
-var server = "http://10.0.0.107/financeiro/sicof/webservice/";
+var server = "http://192.168.11.218/financeiro/sicof/webservice/";
 
 var server_auth = server + 'logintoken.php';
 var server_action = server + 'acoes.php';

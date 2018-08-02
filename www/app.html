@@ -139,7 +139,10 @@
       setInterval(verifica_auth, localStorage.getItem( 'app_timeverify_auth' ));
         
       
-      
+      //////////////////////// Recarregando pagina///////////////////////////////
+      $('#buttonreload').click(function(){
+        buscaAcoes();
+      });
     });
 
   </script>
@@ -172,11 +175,12 @@
           </ons-toolbar-button>
         </div>
         <div class="center" id="tituloApp">Doctum .::. Gestão</div>
+        
         <div class="right">
-          <!-- Toolbar-button  only visible for iOS/other. -->
-          <ons-if platform="ios other">
-            <ons-toolbar-button component="button/new-task">New</ons-toolbar-button>
-          </ons-if>
+                   <!-- Toolbar-button  only visible for iOS/other. -->
+          <ons-button ng-click="ons.notification.alert('ok')" component="buttonreload">
+            <ons-icon icon="ion-refresh-circle"></ons-icon>
+          </ons-button>
         </div>
       </ons-toolbar>
 

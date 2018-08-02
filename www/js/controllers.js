@@ -106,8 +106,9 @@ myApp.controllers = {
     //page.querySelector('#highlight-input').checked = element.data.highlight;
     //page.querySelector('#urgent-input').checked = 1;
     $('#verweb').click(function(){
-
-      navigator.app.loadUrl(element.page+"?"+element.dados.tiposolicitacao+"="+element.dados.idsolicitacao+"&token="+localStorage.getItem('token'), { openExternal: true });
+      //ons.notification.alert(element.dados.tiposolicitacao);
+      //console.log(element.page+"?"+element.dados.tiposolicitacao+"="+element.dados.idsolicitacao+"&token="+localStorage.getItem('token')+"&id="+element.dados.idempresa);
+      navigator.app.loadUrl(element.page+"?"+element.dados.tiposolicitacao+"="+element.dados.idsolicitacao+"&token="+localStorage.getItem('token')+"&id="+element.dados.idempresa, { openExternal: true });
 
     });
 

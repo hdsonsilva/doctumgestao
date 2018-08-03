@@ -14,7 +14,7 @@ function buscaAcoes(){
               },
               success:function(ret){
                 //Se retornar um token valido de acesso
-                
+                $('#pending-list').html('');
                 if(ret.dados){  
                   //Limpando lista de tarefas           
                   

@@ -95,20 +95,28 @@ myApp.controllers = {
   detailsTaskPage: function(page) {
     // Get the element passed as argument to pushPage.
     var element = page.data.element;
+    var pagina ;
     if(debug == 1){
       ons.notification.alert('aqui');
     }
 
     // Fill the view with the stored data.
-    page.querySelector('#title-input').value = element.titulo;
-    page.querySelector('#category-input').value = element.tiposolicitacao;
+    $('#titulo').html(element.titulo);
+    $('#descricao').html(element.dados.descricao);
     //page.querySelector('#description-input').value = element.data.description;
     //page.querySelector('#highlight-input').checked = element.data.highlight;
     //page.querySelector('#urgent-input').checked = 1;
     $('#verweb').click(function(){
       //ons.notification.alert(element.dados.tiposolicitacao);
       //console.log(element.page+"?"+element.dados.tiposolicitacao+"="+element.dados.idsolicitacao+"&token="+localStorage.getItem('token')+"&id="+element.dados.idempresa);
-      navigator.app.loadUrl(element.page+"?"+element.dados.tiposolicitacao+"="+element.dados.idsolicitacao+"&token="+localStorage.getItem('token')+"&id="+element.dados.idempresa, { openExternal: true });
+      pagina = element.page+"&token="+localStorage.getItem('token');
+      document.addEventListener('deviceready', function () {
+        navigator.app.loadUrl(pagina, { openExternal: true });
+      }, false);
+
+      if(navigator.appName == 'Netscape'){
+        window.open(pagina);
+      }
 
     });
 

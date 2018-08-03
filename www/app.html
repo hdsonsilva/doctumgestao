@@ -173,8 +173,8 @@
         
         <div class="right">
                    <!-- Toolbar-button  only visible for iOS/other. -->
-          <ons-button id="buttonreload" component="buttonreload">
-            <ons-icon icon="ion-refresh-circle"></ons-icon>
+          <ons-toolbar-button id="buttonreload" component="buttonreload">
+            <ons-icon icon="md-menu"></ons-icon>
           </ons-button>
         </div>
       </ons-toolbar>
@@ -190,14 +190,19 @@
       <!-- Auto-positioned Tabbar: top on Android, bottom on iOS/other. -->
       
       <ons-tabbar id="myTabbar" position="bottom">
-        <ons-tab id='activehome' page="html/home_page.html"  active label="Home" ><ons-icon size="30px" icon="fa-home"></ons-icon>
+       <!--  <ons-tab id='activehome' page="html/home_page.html"  active label="Home" ><ons-icon size="30px" icon="fa-home"></ons-icon>
         </ons-tab>
-        <ons-tab id='activependente'  page="html/pending_tasks.html"><ons-icon size="30px" icon="fa-check-circle"></ons-icon>
+      -->
+        <ons-tab id='activependente'  active page="html/pending_tasks.html"><ons-icon size="30px" icon="fa-check-circle"></ons-icon>
         </ons-tab>
-         <ons-tab id='activeconcluido' page="html/completed_tasks.html" label="Autorizações"><ons-icon size="30px" icon="fa-archive"></ons-icon>
+        <ons-tab id='activehome' page="html/home_page.html" label="Info" ><ons-icon size="30px" icon="md-info"></ons-icon>
         </ons-tab>
-        <ons-tab page="html/info.html"><ons-icon size="30px" icon="md-info"></ons-icon>
+       <!--   <ons-tab id='activeconcluido' page="html/completed_tasks.html" label="Autorizações"><ons-icon size="30px" icon="fa-archive"></ons-icon>
         </ons-tab>
+      -->
+       <!-- <ons-tab page="html/info.html"><ons-icon size="30px" icon="md-info"></ons-icon>
+        </ons-tab>
+      -->
       </ons-tabbar>
     </ons-page>
   </template>

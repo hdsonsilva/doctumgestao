@@ -120,7 +120,7 @@
           .handleNotificationOpened(notificationOpenedCallback  )
           .endInit();
 
-        window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username"));
+        window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username").toUpperCase() );
 
           }, false);
 
@@ -174,7 +174,7 @@
         <div class="right">
                    <!-- Toolbar-button  only visible for iOS/other. -->
           <ons-toolbar-button id="buttonreload" component="buttonreload">
-            <ons-icon icon="md-menu"></ons-icon>
+            <ons-icon icon="fa-undo"></ons-icon>
           </ons-button>
         </div>
       </ons-toolbar>

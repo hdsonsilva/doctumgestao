@@ -48,6 +48,7 @@ function login(usuario, senha, app_){
 
                 }
                 else{
+                  
                   if(app_ == 'app'){
                     window.location.href = './index.html';
                   }

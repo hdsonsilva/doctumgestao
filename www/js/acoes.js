@@ -26,7 +26,7 @@ function buscaAcoes(){
                   
                 }
                 else{
-                  $('#pending-list').html('Nada localizado');
+                  $('#pending-list').html("<ons-list id='listaNotifications'><ons-list-item modifier='nodivider'><label class='center' for='inner-highlight-input'><ons-icon icon='fa-thumbs-down'></ons-icon>Nenhuma tarefa localizada</label></ons-list-item></ons-list-item></ons-list>");
                   ret = null;
                 
                 }

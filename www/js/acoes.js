@@ -3,6 +3,7 @@ function buscaAcoes(){
 	$.ajax({
               type: 'POST',
               url : server_action,
+              cache: false,
               data: {
                 'token'  : localStorage.getItem('token'),
                 'action' : 'LISTAR'

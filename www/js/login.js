@@ -19,6 +19,7 @@ function login(usuario, senha, app_){
             $.ajax({
               type: 'POST',
               url : localStorage.getItem('server_auth'),
+              cache: false,
               data: {
                 'username'  : username,
                 'password'  : password,

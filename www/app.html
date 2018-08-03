@@ -52,11 +52,14 @@
               },
               function(ret){
                 if(ret.token){
+                  //OK! o token é valido
                   //ons.notification.alert(localStorage.getItem('login_username'));
                 }
                 else{
                   
                   login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'), 'app');
+                  setTimeOut(buscaacoes,2000);
+
                   
                 }
                 //Exibindo o botao se o login der errado

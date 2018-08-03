@@ -114,10 +114,6 @@ myApp.controllers = {
         navigator.app.loadUrl(pagina, { openExternal: true });
       }, false);
 
-      if(navigator.appName == 'Netscape'){
-        window.open(pagina);
-      }
-
     });
 
     

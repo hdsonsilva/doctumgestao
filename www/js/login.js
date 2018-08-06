@@ -68,10 +68,20 @@ function login(usuario, senha, app_){
 
 function deslogar(){
         document.addEventListener('deviceready', function () {
+          
           window.plugins.OneSignal.deleteTag("user");
+        
         }, false);
 
-        window.location.href = './index.html';
+        if(debug == 1){
+          ons.notification.alert('Deslogando');
+        }
+        setTimeout(saindo, 2000);
+
         return false ;
 
     }
+
+function saindo(){
+  window.location.href = './index.html';
+}

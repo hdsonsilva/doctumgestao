@@ -30,7 +30,7 @@
       
         setTimeout(function() {
           modal.hide();
-        }, 10000);
+        }, 12000);
       }
       else{
         modal.hide();
@@ -56,10 +56,8 @@
                   //ons.notification.alert(localStorage.getItem('login_username'));
                 }
                 else{
-                  
-                  login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'), 'app');
-                  setTimeOut(buscaacoes,2000);
-
+                 
+                  login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'), 'wait');
                   
                 }
                 //Exibindo o botao se o login der errado

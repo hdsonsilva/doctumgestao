@@ -1,8 +1,9 @@
 function login(usuario, senha, app_){
+
         var username = usuario ;
         var password = senha ;
-        var ok = 0 ;
-            
+        var ok = 0 ;  
+        
             //Verificando o Lembre-se e armazenando os dados de login e senha
             if($('#input-lembreme').prop('checked')){
               
@@ -59,7 +60,7 @@ function login(usuario, senha, app_){
               
               },
               dataType:'json',
-              async:true
+              async: true
           }); 
 
         return ok ;

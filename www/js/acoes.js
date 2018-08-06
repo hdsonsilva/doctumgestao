@@ -33,6 +33,7 @@ function buscaAcoes(){
 
                 showModal('hide');
                 //////////////////////// Recarregando pagina///////////////////////////////
+                $('#buttonreload').unbind('click');
                 $('#buttonreload').click(function(){
                   buscaAcoes();
                 });
@@ -48,6 +49,7 @@ function buscaAcoes(){
                 }
 
                  //////////////////////// Recarregando pagina///////////////////////////////
+                 $('#buttonreload').unbind('click');
                 $('#buttonreload').click(function(){
                   buscaAcoes();
                 });

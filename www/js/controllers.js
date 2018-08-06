@@ -111,9 +111,16 @@ myApp.controllers = {
       //ons.notification.alert(element.dados.tiposolicitacao);
       //console.log(element.page+"?"+element.dados.tiposolicitacao+"="+element.dados.idsolicitacao+"&token="+localStorage.getItem('token')+"&id="+element.dados.idempresa);
       pagina = element.page+"&token="+localStorage.getItem('token');
-      document.addEventListener('deviceready', function () {
-        navigator.app.loadUrl(pagina, { openExternal: true });
-      }, false);
+      if(debug == 0){
+        
+        document.addEventListener('deviceready', function () {
+          navigator.app.loadUrl(pagina, { openExternal: true });
+        }, false);
+
+      }
+      else{
+        window.open(pagina);
+      }
 
     });
 

@@ -65,3 +65,13 @@ function login(usuario, senha, app_){
 
         return ok ;
 }
+
+function deslogar(){
+        document.addEventListener('deviceready', function () {
+          window.plugins.OneSignal.deleteTag("user");
+        }, false);
+
+        window.location.href = './index.html';
+        return false ;
+
+    }

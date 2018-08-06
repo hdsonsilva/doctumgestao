@@ -14,7 +14,7 @@
 
     <gap:plugin name="onesignal-cordova-plugin" spec="^2.4.1" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
-    
+    <plugin name="cordova-plugin-splashscreen" source="npm"/>
     <!-- Requires cli-8.0.0 but we recommend using the latest version. -->
     <preference name="phonegap-version" value="cli-8.0.0" /> 
     <preference name="android-build-tool" value="gradle" />
@@ -32,7 +32,12 @@
     <allow-intent href="https://*/*" />
     <allow-intent href="geo:*" />
     
-   
+    <splash src="./www/img/Default@2x~universal~anyany.png" />
+    <splash src="./www/img/Default@2x~universal~comany.png" />
+    <splash src="./www/img/Default@2x~universal~comcom.png" />
+    <splash src="./www/img/Default@3x~universal~anyany.png" />
+    <splash src="./www/img/Default@3x~universal~anycom.png" />
+    <splash src="./www/img/Default@3x~universal~comany.png" />
     
     <platform name="android">
         <allow-intent href="market:*" />

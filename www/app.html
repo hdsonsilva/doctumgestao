@@ -16,12 +16,20 @@
   <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
   <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
   <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
   <script>
     var auth_check = 0 ;
+
+    function abrirURL( pagina ){
+      if(debug == 1){
+        window.open(pagina+"?token="+ localStorage.getItem("token") );
+      }
+      else{
+        navigator.app.loadUrl(pagina+"?token="+localStorage.getItem("token") , { openExternal: true });
+      }
+    }
 
     function showModal(controle) {
       var modal = document.querySelector('ons-modal');
@@ -205,7 +213,7 @@
 <ons-modal direction="up">
   <div style="text-align: center">
     <p>
-      <ons-icon icon="md-spinner" size="28px" spin></ons-icon> Loading...
+      <ons-icon icon="md-spinner" size="28px" spin></ons-icon> Aguarde...
     </p>
   </div>
 </ons-modal>

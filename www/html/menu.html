@@ -2,17 +2,41 @@
   
   <ons-list-title>Links</ons-list-title>
   <ons-list id="links">
-    <ons-list-item tappable="" style="cursor:pointer;" modifier="longdivider chevron" onclick="window.open('https://financeiro.doctum.edu.br')">
+    <ons-list-item tappable="" style="cursor:pointer;" modifier="longdivider chevron" onclick="abrirURL('https://sicof.doctum.edu.br/sicof/menu.php')">
       <div class="left">
         <ons-icon icon="fa-external-link" style="color: grey;"></ons-icon>
       </div>
       <div class="center">
-        SICOF/SGO/SIND
+        SICOF
+      </div>
+    </ons-list-item>
+    <ons-list-item tappable="" style="cursor:pointer;" modifier="longdivider chevron" onclick="abrirURL('https://compras.doctum.edu.br/sicof/empresas/compras')">
+      <div class="left">
+        <ons-icon icon="fa-external-link" style="color: grey;"></ons-icon>
+      </div>
+      <div class="center">
+        COMPRAS
+      </div>
+    </ons-list-item>
+    <ons-list-item tappable="" style="cursor:pointer;" modifier="longdivider chevron" onclick="abrirURL('https://sgo.doctum.edu.br/sicof/empresas/empenho')">
+      <div class="left">
+        <ons-icon icon="fa-external-link" style="color: grey;"></ons-icon>
+      </div>
+      <div class="center">
+        SGO
+      </div>
+    </ons-list-item>
+    <ons-list-item tappable="" style="cursor:pointer;" modifier="longdivider chevron" onclick="abrirURL('https://sind.doctum.edu.br/sicof/empresas/renegociacao_2.0.1/')">
+      <div class="left">
+        <ons-icon icon="fa-external-link" style="color: grey;"></ons-icon>
+      </div>
+      <div class="center">
+        SIND
       </div>
     </ons-list-item>
     <!--
     <ons-list-item tappable="" style="cursor: pointer" modifier="longdivider chevron"
-      onclick="navigator.app.loadUrl('https://onsen.io/', { openExternal: true });"
+      onclick="abrirURL'https://onsen.io/');"
     >
       <div class="left">
         <ons-icon icon="fa-external-link" style="color: grey;"></ons-icon>
@@ -22,7 +46,7 @@
       </div>
     </ons-list-item>
     <ons-list-item tappable="" style="cursor: pointer" modifier="longdivider chevron"
-      onclick="window.open('https://community.onsen.io/')"
+      onclick="abrirURL'https://community.onsen.io/')"
     >
       <div class="left">
         <ons-icon icon="fa-external-link" style="color: grey;"></ons-icon>

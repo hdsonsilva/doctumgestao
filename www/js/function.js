@@ -1,3 +1,13 @@
+function exibeMensagem(page){
+  if(page == 'tarefas'){
+    $('#pending-list').append("<ons-list class='buscar' id='reloadpending'><ons-list-item modifier='nodivider'><p style='text-align:center;width:100%'><label class='center' for='inner-highlight-input'>Clique  no botão <ons-icon icon='fa-undo'></ons-icon> para atualizar  </label></p></ons-list-item></ons-list-item></ons-list>");
+    //$('#reloadpending').unbind();
+    /*$('#reloadpending').click(function(){
+      buscaAcoes();
+    });*/
+  }
+}
+
 function abrirURL( pagina ){
       if(debug == 1){
         window.open(pagina+"?token="+ localStorage.getItem("token") );

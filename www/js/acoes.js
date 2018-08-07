@@ -32,11 +32,7 @@ function buscaAcoes(){
                 }
 
                 showModal('hide');
-                //////////////////////// Recarregando pagina///////////////////////////////
-                $('#buttonreload').unbind('click');
-                $('#buttonreload').click(function(){
-                  buscaAcoes();
-                });
+                
               
               },
               error:function(e, erro){
@@ -48,11 +44,7 @@ function buscaAcoes(){
                   $('#pending-list').html("<ons-list id='listaNotifications'><ons-list-item modifier='nodivider'><label class='center' for='inner-highlight-input'><ons-icon icon='fa-thumbs-down'></ons-icon> Ocorreu um erro ao processar<br>sua solicitação.<br>Tente novamente mais tarde.</label></ons-list-item></ons-list-item></ons-list>");
                 }
 
-                 //////////////////////// Recarregando pagina///////////////////////////////
-                 $('#buttonreload').unbind('click');
-                $('#buttonreload').click(function(){
-                  buscaAcoes();
-                });
+                 
               
               },
               dataType:'json',

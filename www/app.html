@@ -31,7 +31,13 @@
       document.addEventListener('show', function(event) {
         if (event.target.matches('#pendingTasksPage')) {
           //////////////////////////////////////////////////////////
-          buscaAcoes();
+          //buscaAcoes();
+          exibeMensagem( 'tarefas' );
+          //////////////////////// Recarregando pagina///////////////////////////////
+          $('#buttonreload').unbind('click');
+          $('#buttonreload').click(function(){
+            buscaAcoes();
+          });
           ////////////////////////////////////////////////////////////
         }
       }, false);
@@ -42,7 +48,7 @@
       setInterval(verifica_auth, localStorage.getItem( 'app_timeverify_auth' ));
       
     });
-    
+
   </script>
 
   <!-- First navigation component: Navigator. This will remain always on top of the app. -->

@@ -103,7 +103,7 @@ myApp.controllers = {
     // Fill the view with the stored data.
     $('#titulo').html(element.titulo);
     $('#descricao').html(element.dados.descricao);
-    ons.notification.alert(JSON.stringify(element));
+    //ons.notification.alert(JSON.stringify(element));
     //page.querySelector('#description-input').value = element.data.description;
     //page.querySelector('#highlight-input').checked = element.data.highlight;
     //page.querySelector('#urgent-input').checked = 1;

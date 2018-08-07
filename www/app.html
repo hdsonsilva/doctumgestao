@@ -12,6 +12,8 @@
   <script src="js/controllers.js"></script>
   <script src="./js/login.js"></script>
   <script src="./js/acoes.js"></script>
+  <script src="./js/function.js"></script>
+  <script src="./js/push.js"></script>
 
   <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
   <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
@@ -22,128 +24,25 @@
   <script>
     var auth_check = 0 ;
 
-    function abrirURL( pagina ){
-      if(debug == 1){
-        window.open(pagina+"?token="+ localStorage.getItem("token") );
-      }
-      else{
-        navigator.app.loadUrl(pagina+"?token="+localStorage.getItem("token") , { openExternal: true });
-      }
-    }
-
-    function showModal(controle) {
-      var modal = document.querySelector('ons-modal');
-      if(controle == 'show'){
-        modal.show();
-      
-        setTimeout(function() {
-          modal.hide();
-        }, 12000);
-      }
-      else{
-        modal.hide();
-      }
-    }
-
-    
-    function verifica_auth(controle){
-      $.post(
-            localStorage.getItem('server_auth'),
-              {
-                'token'     : localStorage.getItem('token'),
-                'action'    : 'VALIDATOKEN'
-              },
-              function(ret){
-                if(ret.token){
-                  //OK! o token é valido
-                  //ons.notification.alert(localStorage.getItem('login_username'));
-                }
-                else{
-                 
-                  login( localStorage.getItem('login_username'),  localStorage.getItem('login_password'), 'wait');
-                  
-                }
-                //Exibindo o botao se o login der errado
-                $('#button').show();
-                $('#progress').hide();
-              },
-              'json'
-            );
-    }
-
     ////////////////////// EVENTOS SHOW PAGE //////////////////////////////////Q
 
 
       //Atualizando a lista de tarefas para o usuario
       document.addEventListener('show', function(event) {
         if (event.target.matches('#pendingTasksPage')) {
-          
           //////////////////////////////////////////////////////////
           buscaAcoes();
           ////////////////////////////////////////////////////////////
         }
       }, false);
-    ///////////////// PUSH NOTIFICATION ////////////////////////////////////////
-     document.addEventListener('deviceready', function () {
-        //Desativar botao voltar
-        document.addEventListener("backbutton", function(){navigator.app.exitApp();} , false);
-
-        // Enable to debug issues.
-        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-        
-        if(debug == 1){
-          ons.notification.alert('iniciando push');
-        }
-
-        /////////////////// ACAO EXECUTADA QUANDO SE CLICA NA NOTIFICACAO PUSH////////
-        var notificationOpenedCallback = function(jsonData) {
-           
-          if(debug == 1){
-            ons.notification.alert(JSON.stringify(jsonData.notification.payload.additionalData));
-          }
-          
-        //Teste de como pegar dados s no push
-        //localStorage.setItem('pushInfo',jsonData.notification.payload.additionalData.sessao);
-
-          document.querySelector('#myNavigator').pushPage('html/details_task.html',
-            {
-              animation: 'lift',
-              data: {
-                element:  jsonData.notification.payload.additionalData
-              }
-            }
-          );
-          
-          if(debug == 1){
-            ons.notification.alert('final');
-          }
-        }
-        
-        window.plugins.OneSignal
-          .startInit(localStorage.getItem('idonesignal'))
-          .handleNotificationOpened(notificationOpenedCallback  )
-          .endInit();
-
-        window.plugins.OneSignal.sendTag("user", localStorage.getItem("login_username").toUpperCase() );
-
-          }, false);
-
-
-
-
     $(document).ready(function(){
       ////////////////////// VERIFICACAO DE AUTH /////////////////////////////////
       
       verifica_auth();
-      /*Pegando retorno da notificação PUSH
-      if(localStorage.getItem('pushInfo')){
-        ons.notification.alert(localStorage.getItem('idonesignal'));
-      }*/
-      //ons.notification.alert(localStorage.getItem('idonesignal'));
       setInterval(verifica_auth, localStorage.getItem( 'app_timeverify_auth' ));
       
     });
-
+    
   </script>
 
   <!-- First navigation component: Navigator. This will remain always on top of the app. -->

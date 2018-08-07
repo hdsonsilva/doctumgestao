@@ -57,6 +57,9 @@ function login(usuario, senha, app_){
                   auth_check = -1 ;
                 
                 }
+                //Se o login der certo, chama a funcao acoes novamente,
+                //para carregar a lista de tarefas do usuarios, caso tenha dado falha antes
+                acoes();
               
               },
               dataType:'json',

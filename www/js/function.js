@@ -56,3 +56,29 @@ function abrirURL( pagina ){
               'json'
             );
     }
+
+    function removeItem(dados){
+      //ons.notification.alert(dados.idacess_ws_acao);
+       showModal('show');
+      $.ajax({
+              type: 'POST',
+              url : server_action,
+              cache: false, //Nao fazer cache
+              timeout: 10000, //10 segundos
+              data: {
+                'token'  : localStorage.getItem('token'),
+                'action' : 'OCULTAR',
+                'idacao' : dados.idacess_ws_acao
+              },
+              success:function(ret){
+                showModal('hide');
+              },
+              error:function(e, erro){
+                //Se retornar um token valido de acesso
+                showModal('hide');
+                ons.notification.alert("Ocorreu um erro ao processar sua solicitação. Atualize a lista e verifique se a ação foi concluida.");
+              },
+              dataType:'json',
+              async:true //Não esperar retorno para continuar codigo
+          }); 
+    }

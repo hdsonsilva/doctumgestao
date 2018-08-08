@@ -37,11 +37,12 @@ myApp.services = {
         });
       };
 
-      taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
+      //taskItem.addEventListener('change', taskItem.data.onCheckboxChange);
 
       // Add button functionality to remove a task.
       taskItem.querySelector('.right').onclick = function() {
         myApp.services.tasks.remove(taskItem);
+        removeItem(data);
       };
 
       // Add functionality to push 'details_task.html' page with the current element as a parameter.

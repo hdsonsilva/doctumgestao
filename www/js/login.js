@@ -59,7 +59,7 @@ function login(usuario, senha, app_){
                 }
                 //Se o login der certo, chama a funcao acoes novamente,
                 //para carregar a lista de tarefas do usuarios, caso tenha dado falha antes
-                acoes();
+                buscaAcoes();
               
               },
               dataType:'json',

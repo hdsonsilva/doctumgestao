@@ -70,6 +70,7 @@ function login(usuario, senha, app_){
 }
 
 function deslogar(){
+        showModal('show');
         document.addEventListener('deviceready', function () {
           
           window.plugins.OneSignal.deleteTag("user");
@@ -86,5 +87,6 @@ function deslogar(){
     }
 
 function saindo(){
+
   window.location.href = './index.html';
 }

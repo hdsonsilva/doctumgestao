@@ -169,6 +169,7 @@ myApp.services = {
 
     // Adds filtering functionality to a category item.
     bindOnCheckboxChange: function(categoryItem) {
+      /*
       var categoryId = categoryItem.getAttribute('category-id');
       var allItems = categoryId === null;
 
@@ -182,7 +183,7 @@ myApp.services = {
       };
 
       categoryItem.addEventListener('change', categoryItem.updateCategoryView);
-    },
+    */},
 
     // Transforms a category name into a valid id.
     parseId: function(categoryLabel) {

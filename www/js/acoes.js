@@ -32,6 +32,7 @@ function buscaAcoes(){
                 }
 
                 showModal('hide');
+                controle_mensagem_atualizar = 0;
                 
               
               },

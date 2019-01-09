@@ -41,7 +41,9 @@
     
     <platform name="android">
        
-        
+         <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET"/>
+        </config-file>
        
 
         <allow-intent href="market:*" />

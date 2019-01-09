@@ -42,11 +42,7 @@
     
     <platform name="android">
        
-          <custom-config-file target="AndroidManifest.xml" parent="/*">
-             <uses-permission android:name="android.permission.INTERNET" />
-             <!--<uses-permission android:name="android.permission.NETWORK_ACCESS" />
-                 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
-        </custom-config-file>
+        
        
 
         <allow-intent href="market:*" />

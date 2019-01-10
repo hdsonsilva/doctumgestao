@@ -40,19 +40,30 @@
     <splash src="./www/img/Default@3x~universal~comany.png" />
     
     <platform name="android">
-       
-         <config-file target="AndroidManifest.xml" parent="/manifest">
-            <uses-permission android:name="android.permission.INTERNET"/>
-        </config-file>
-       
-
-        <allow-intent href="market:*" />
+         <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+            <uses-permission android:name="android.permission.READ_CONTACTS" />
+            <uses-permission android:name="android.permission.READ_CALENDAR" />
+            <allow-intent href="market:*" />
         <icon density="ldpi" src="./www/img/doctum800x800.png" />
         <icon density="mdpi" src="./www/img/doctum800x800.png" />
         <icon density="hdpi" src="./www/img/doctum800x800.png" />
         <icon density="xhdpi" src="./www/img/doctum800x800.png" />
         <icon density="xxhdpi" src="./www/img/doctum800x800.png" />
         <icon density="xxxhdpi" src="./www/img/doctum800x800.png" />
+        </config-file>
+       
     </platform>
 
     <platform name="ios">

@@ -28,9 +28,7 @@
 
     <access origin="*" />
     <allow-navigation href="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="geo:*" />
+    <allow-intent href="*" />
     
     <splash src="./www/img/Default@2x~universal~anyany.png" />
     <splash src="./www/img/Default@2x~universal~comany.png" />

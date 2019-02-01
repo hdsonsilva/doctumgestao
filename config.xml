@@ -40,15 +40,15 @@
     <splash src="./www/img/Default@3x~universal~comany.png" />
     
     <platform name="android">
-         <config-file parent="/*" target="AndroidManifest.xml">
-            <allow-intent href="market:*" />
+         
+        <allow-intent href="market:*" />
         <icon density="ldpi" src="./www/img/doctum800x800.png" />
         <icon density="mdpi" src="./www/img/doctum800x800.png" />
         <icon density="hdpi" src="./www/img/doctum800x800.png" />
         <icon density="xhdpi" src="./www/img/doctum800x800.png" />
         <icon density="xxhdpi" src="./www/img/doctum800x800.png" />
         <icon density="xxxhdpi" src="./www/img/doctum800x800.png" />
-        </config-file>
+        
        
     </platform>
 
